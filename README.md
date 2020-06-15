@@ -84,6 +84,23 @@ The app's functionality includes:
     * Username (email validation)
     * Password (at least 8 chars, at least one alpha and a special character validation)
 
+
+## Components Structure
+* __Index.js__ (stateless)
+    * __App.js__ (stateful)
+        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+            * __Login.js__ (stateful) - 
+            * __Register.js__ (stateful) - 
+        * __Navbar.js__ (stateless) - 
+        * __HomePage.js__ (stateful)  - 
+            * __About.js__ (stateless) - 
+            * __Recipes.js__ (stateless) - 
+            * __Forum.js__ (statelful) - 
+        * __Account.js__ (stateful) - 
+            * __MyPosts.js__ (stateful) - 
+            * __MyRecipes.js__ (stateful) - 
+            
+
 ## Api Documentation
 * The Spoonacular api address is  https://developer.Spoonacular.com/Spoonacular-docs-recipe-api
 * The endpoint url is https://api.Spoonacular.com/search
