@@ -61,16 +61,12 @@ Landing/Login Page
 :-------------------------:
 ![Landing/Login Page](/github-images/wireframes/keto-diet-capstone-client-landingpage.jpg) 
 Home Page
-:-------------------------:
 ![Home Page](/github-images/wireframes/keto-diet-capstone-client-homepage.jpg) 
 Forum Page
-:-------------------------:
 ![Forum Page](/github-images/wireframes/keto-diet-capstone-client-forumpage.jpg) 
 My Posts Page
-:-------------------------:
 ![My Posts Page](/github-images/wireframes/keto-diet-capstone-client-myposts.jpg) 
 My recipes Page
-:-------------------------:
 ![My recipes Page](/github-images/wireframes/keto-diet-capstone-client-myrecipes.jpg) 
 
 
