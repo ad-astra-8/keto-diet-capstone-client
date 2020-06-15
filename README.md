@@ -56,16 +56,20 @@ This app is for logged-in user.
 * I want to be able to see my saved favorite recipes from my previous searches, as well as my previous submitted comments,
 * So that I can keep track of my activity on the app.
 
-### Wireframe
-Desktop Wireframes
+### Wireframes
+Landing/Login Page
 :-------------------------:
 ![Landing/Login Page](/github-images/wireframes/keto-diet-capstone-client-landingpage.jpg) 
+Home Page
 :-------------------------:
 ![Home Page](/github-images/wireframes/keto-diet-capstone-client-homepage.jpg) 
+Forum Page
 :-------------------------:
 ![Forum Page](/github-images/wireframes/keto-diet-capstone-client-forumpage.jpg) 
+My Posts Page
 :-------------------------:
 ![My Posts Page](/github-images/wireframes/keto-diet-capstone-client-myposts.jpg) 
+My recipes Page
 :-------------------------:
 ![My recipes Page](/github-images/wireframes/keto-diet-capstone-client-myrecipes.jpg) 
 
@@ -73,7 +77,7 @@ Desktop Wireframes
 ## Screenshot
 Full Page Screenshot 
 :-------------------------:
-![Landing Page](/images/fullpage-screenshot.png) 
+![Landing Page](/github-images/screenshots/FILENAMEHERE.jpg) 
 
 ## Functionality
 The app's functionality includes:
