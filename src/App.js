@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import LandingPage from './LandingPage'
 import Navbar from './Navbar'
-import Homepage from './HomePage'
+import HomePage from './HomePage'
 import Account from './Account'
 
 
@@ -11,7 +11,7 @@ function App() {
     <main className="App">
      <LandingPage />
      <Navbar />
-     <Homepage />
+     <HomePage />
      <Account />
     </main>
   );
