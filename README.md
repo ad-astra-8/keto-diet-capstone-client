@@ -69,6 +69,10 @@ My Posts Page
 My recipes Page
 ![My recipes Page](/github-images/wireframes/keto-diet-capstone-client-myrecipes.jpg) 
 
+### Graybox Wireframes
+Full website graybox wireframes
+:-------------------------:
+![Full website graybox wireframes](/github-images/wireframes/graybox-wireframes.png) 
 
 ## Screenshot
 Full Page Screenshot 
