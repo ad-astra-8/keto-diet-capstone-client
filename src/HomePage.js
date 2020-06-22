@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import About from './About'
 import Recipes from './Recipes'
 import Forum from './Forum'
+import Navbar from './Navbar'
 
 
 class HomePage extends Component {
     render() {
         return (
+            <div>
+            <Navbar />
             <section className="homepage">
 
                 <h2 className="homepage-h2">Homepage</h2>
@@ -23,6 +26,7 @@ class HomePage extends Component {
                 <Recipes />
                 <Forum />
             </section>
+            </div>
         )
     }
 

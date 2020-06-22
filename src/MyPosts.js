@@ -1,21 +1,13 @@
 import React, {Component} from  'react'
+import Navbar from './Navbar'
 
 
 class MyPosts extends Component {
     render() {
         return (
-            <section className="favorites">
-            <nav>
-              <ul>
-            <li className="logo"><a href="#home">Everything Keto</a></li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#forum">Forum</a></li>
-            <li><a href="#account">Jon's Account</a></li>
-            <li className="log-out"><a href="#log out">Log out</a></li>
-          </ul>
-            </nav>
-          
+            <div>
+                <Navbar />
+            <section className="favorites">          
           <h1 className="">My posts:</h1>
           
           
@@ -36,7 +28,8 @@ class MyPosts extends Component {
               <button type="submit" id="update-button">Update</button>
               <button type="submit" id="delete-button">Delete</button>
           </section>
-          
+          </div>
+
         )
     }
 

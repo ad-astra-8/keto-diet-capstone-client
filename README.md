@@ -95,14 +95,18 @@ The app's functionality includes:
         * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
             * __Login.js__ (stateful) - 
             * __Register.js__ (stateful) - 
-        * __Navbar.js__ (stateless) - 
         * __HomePage.js__ (stateful)  - 
+            * __Navbar.js__ (stateless) - 
             * __About.js__ (stateless) - 
             * __Recipes.js__ (stateless) - 
             * __Forum.js__ (statelful) - 
         * __Account.js__ (stateful) - 
-            * __MyPosts.js__ (stateful) - 
-            * __MyRecipes.js__ (stateful) - 
+            * __Navbar.js__ (stateless) - 
+        * __MyPosts.js__ (stateful) - 
+            * __Navbar.js__ (stateless) - 
+        * __MyRecipes.js__ (stateful) - 
+            * __Navbar.js__ (stateless) - 
+
             
 
 ## Api Documentation
@@ -126,19 +130,16 @@ This is v1.0 of the app, but future enhancements are expected to include:
 ## How to run it
 Use command line to navigate into the project folder and run the following in terminal
 
-
 ### Local Node scripts
 * To install the node project ===> npm install
 * To migrate the database ===> npm run migrate -- 1
 * To run Node server (on port 8000) ===> npm run dev
 * To run tests ===> npm run test
 
-
 ### Local React scripts
 * To install the react project ===> npm install
 * To run react (on port 3000) ===> npm start
 * To run tests ===> npm run test
-
 
 
 
