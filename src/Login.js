@@ -19,7 +19,7 @@ class Login extends Component {
                 </div>
                 <div className="footer">
                     <p>Don't have an account yet?</p>
-                    <a href="" className="register-link">
+                    <a href="#register-component" className="register-link">
                         <span>Sign up here</span>
                     </a>
                 </div>
