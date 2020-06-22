@@ -2,9 +2,9 @@ import React from 'react';
 // import './App.css';
 import LandingPage from './LandingPage'
 import HomePage from './HomePage'
-import Account from './Account'
-import MyRecipes from './MyRecipes'
-import MyPosts from './MyPosts'
+import AccountPage from './AccountPage'
+import MyRecipesPage from './MyRecipesPage'
+import MyPostsPage from './MyPostsPage'
 
 
 function App() {
@@ -12,9 +12,9 @@ function App() {
     <main className="App">
      <LandingPage />
      <HomePage />
-     <Account />
-     <MyRecipes />
-     <MyPosts />
+     <AccountPage />
+     <MyRecipesPage />
+     <MyPostsPage />
     </main>
   );
 }

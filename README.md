@@ -100,11 +100,11 @@ The app's functionality includes:
             * __About.js__ (stateless) - 
             * __Recipes.js__ (stateless) - 
             * __Forum.js__ (statelful) - 
-        * __Account.js__ (stateful) - 
+        * __AccountPage.js__ (stateful) - 
             * __Navbar.js__ (stateless) - 
-        * __MyPosts.js__ (stateful) - 
+        * __MyPostsPage.js__ (stateful) - 
             * __Navbar.js__ (stateless) - 
-        * __MyRecipes.js__ (stateful) - 
+        * __MyRecipesPage.js__ (stateful) - 
             * __Navbar.js__ (stateless) - 
 
             
