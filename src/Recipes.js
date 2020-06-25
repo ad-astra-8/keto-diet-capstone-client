@@ -5,8 +5,8 @@ function Recipes() {
   return (
     <section className="recipes">  
   <h2 className="forum">Keto Recipes</h2>
-        <label for="search-term">Search for a keto recipe with keyword:</label>
-        <input type="input" name="search" id="search-term" value="" placeholder=" chocolate" />
+        <label htmlFor="search-term">Search for a keto recipe with keyword:</label>
+        <input type="input" name="search" id="search-term" placeholder=" chocolate" />
         <button type="submit" id="submit-keyword">Search</button>
         <p className="error-message">error: please enter a search term</p>
         <p className="error-message">error: sorry, we found 0 result for your search about " "</p>

@@ -7,15 +7,15 @@ class Forum extends Component {
             <section className="forum">
                 <h2 className="forum">Forum</h2>
                 <label for="search-term">Search for a post with keyword:</label>
-                <input type="input" name="search" id="search-term" value="" placeholder=" keyword" />
+                <input type="input" name="search" id="search-term" placeholder=" keyword" />
                 <button type="submit" id="submit-keyword">Search</button>
                 <p className="error-message">error: please enter a search term</p>
                 <p className="error-message">error: sorry, we found 0 result for your search about " "</p>
 
                 <div className="tab">
-                    <button className="tablinks" onclick="openCity(event, 'London')">Routine </button>
-                    <button className="tablinks" onclick="openCity(event, 'Paris')">Workout </button>
-                    <button className="tablinks" onclick="openCity(event, 'Tokyo')">Recipes </button>
+                    <button className="tablinks" onClick="openCity(event, 'London')">Routine </button>
+                    <button className="tablinks" onClick="openCity(event, 'Paris')">Workout </button>
+                    <button className="tablinks" onClick="openCity(event, 'Tokyo')">Recipes </button>
                 </div>
 
                 <h3>Results for "Routine":</h3>
@@ -39,7 +39,7 @@ class Forum extends Component {
 
 
                 <div className="comment-area">
-                    <textarea id="post-comment" value="" placeholder="leave your comment here"></textarea>
+                    <textarea id="post-comment" placeholder="leave your comment here"></textarea>
                     <br />
                     <button type="submit" id="comment-submit-button">Submit</button>
                 </div>

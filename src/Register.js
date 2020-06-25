@@ -129,11 +129,11 @@ class Register extends Component {
                 <div className="form-div">
                     <form className="register-form" onSubmit={this.handleSubmit}>
                         {errorMessage}
-                        <label for="enter-username">Enter Username:</label>
-                        <input className="login-input" type="text" name="registerUsername" placeholder="enter username here" required />
+                        <label htmlFor="enter-username">Enter Username:</label>
+                        <input className="register-input" type="text" name="registerUsername" placeholder="enter username here" required />
                         <p className="error-message">please enter a valid username</p>
-                        <label for="enter-password">Enter Password:</label>
-                        <input className="login-input" type="text" name="registerPassword" placeholder="enter password here" required />
+                        <label htmlFor="enter-password">Enter Password:</label>
+                        <input className="register-input" type="text" name="registerPassword" placeholder="enter password here" required />
                         <p className="error-message">please enter a valid password</p>
                         <button type="submit">Register</button>
                     </form>
