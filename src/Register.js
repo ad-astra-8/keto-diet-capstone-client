@@ -55,69 +55,78 @@ class Register extends Component {
         }
         console.log(data)
         let { registerUsername, registerPassword } = data
+        //starting validation
+        //validate username
         if (this.validateUsername(registerUsername) === '') {
             this.setState({
-                error: 'username must match email address'
+                error: 'username must be an email address'
             })
         }
-        if (this.validatePassword(registerPassword) === '') {
+        //validate password
+        else if (this.validatePassword(registerPassword) === '') {
             this.setState({
                 error: 'password is not valid'
             })
         }
-        //assigning the object from the form data to params in the state
-        this.setState({
-            params: data
-        })
+        //if validation successful, make API call
+        else {
 
-        //check if the state is populated with the search params data
-        console.log(this.state.params)
+            //assigning the object from the form data to params in the state
+            this.setState({
+                params: data,
+                error: null
+            })
 
-        const searchURL = `${config.API_ENDPOINT}/registration-page`
+            //check if the state is populated with the search params data
+            console.log(this.state.params)
 
-        const queryString = this.formatQueryParams(data)
+            const searchURL = `${config.API_ENDPOINT}/registration-page`
 
-        //sent all the params to the final url
-        const url = searchURL + '?' + queryString
+            const queryString = this.formatQueryParams(data)
 
-        console.log(url)
+            //sent all the params to the final url
+            const url = searchURL + '?' + queryString
 
-        //define the API call parameters
-        const options = {
-            method: 'POST',
-            header: {
-                "Authorization": "",
-                "Content-Type": "application/json"
+            console.log(url)
+
+            //define the API call parameters
+            const options = {
+                method: 'POST',
+                header: {
+                    "Authorization": "",
+                    "Content-Type": "application/json"
+                }
             }
+
+            //useing the url and paramters above make the api call
+            fetch(url, options)
+
+                // if the api returns data ...
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error('Something went wrong, please try again later.')
+                    }
+                    // ... convert it to json
+                    return res.json()
+                })
+                // use the json api output
+                .then(data => {
+
+                    //check if there is meaningfull data
+                    console.log(data);
+                    // check if there are no results
+                    if (data.totalItems === 0) {
+                        throw new Error('No data found')
+                    }
+
+                })
+                .catch(err => {
+                    // this.setState({
+                    //     error: err.message
+                    // })
+                })
         }
 
-        //useing the url and paramters above make the api call
-        fetch(url, options)
-
-            // if the api returns data ...
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error('Something went wrong, please try again later.')
-                }
-                // ... convert it to json
-                return res.json()
-            })
-            // use the json api output
-            .then(data => {
-
-                //check if there is meaningfull data
-                console.log(data);
-                // check if there are no results
-                if (data.totalItems === 0) {
-                    throw new Error('No data found')
-                }
-
-            })
-            .catch(err => {
-                // this.setState({
-                //     error: err.message
-                // })
-            })
     }
 
     render() {
@@ -130,11 +139,9 @@ class Register extends Component {
                     <form className="register-form" onSubmit={this.handleSubmit}>
                         {errorMessage}
                         <label htmlFor="enter-username">Enter Username:</label>
-                        <input className="register-input" type="text" name="registerUsername" placeholder="enter username here" required />
-                        <p className="error-message">please enter a valid username</p>
+                        <input className="register-input" type="text" name="registerUsername" placeholder="my.username@ymail.com" required />
                         <label htmlFor="enter-password">Enter Password:</label>
-                        <input className="register-input" type="text" name="registerPassword" placeholder="enter password here" required />
-                        <p className="error-message">please enter a valid password</p>
+                        <input className="register-input" type="password" name="registerPassword" placeholder="password" required />
                         <button type="submit">Register</button>
                     </form>
                 </div>

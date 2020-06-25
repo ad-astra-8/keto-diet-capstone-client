@@ -6,6 +6,17 @@ import Navbar from './Navbar'
 
 
 class HomePage extends Component {
+    constructor() {
+        super()
+        this.state = {
+            loading: false,
+            results: []
+
+        }
+    }
+
+
+
     render() {
         return (
             <div>
