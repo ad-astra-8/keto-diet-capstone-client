@@ -1,8 +1,12 @@
 # keto-diet-capstone-client
-Everything Keto app is using Spoonacular in order to help the users to search for keto recipes based on a choosen ingredient.
-It will display recipes nutriment information as well as their pictures.
-Also, users will be able save their favorite recipes into their account, as well as access them evertime they log in.
-All the more, the app will enable users to post/update/delete comments about their own diet routine, workout routine or even share their own recipes.
+
+"Everything Keto" app will help users gain all the information they need about the Keto diet. 
+Keto dieters usually have to thoroughly search through scattered information to gather just the basic guidelines. 
+The app will teach the users about the keto diet and guide them through the process.
+Once successfully registered and logged in, users will be able to search for keto recipes based on a choosen ingredient.
+The app will be using Spoonacular API. It will display recipes nutriment information as well as their pictures. 
+They will also be able to save their favorite recipes into their account, as well as access them every time they log in.
+All the more, the app will enable users to read post/update/delete comments about diet routine, general ideas or even share their own recipes.
 It’s user-friendly, and accessible to everyone.
 
 ## Working Prototype

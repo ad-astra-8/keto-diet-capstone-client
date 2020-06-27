@@ -144,7 +144,6 @@ class Login extends Component {
                         <label htmlFor="password">Password:</label>
                         <input className="login-input" type="password" name="loginPassword" placeholder="password" required />
                         <button type="submit">Login</button>
-
                     </form>
 
                 </div>
