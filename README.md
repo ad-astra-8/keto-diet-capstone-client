@@ -29,7 +29,7 @@ This app is for logged-in user.
 #### Sign Up
 * As a visitor
 * I want to register to use this app
-* So I can create a personal Keto Everything account.
+* So I can create a personal Everything Keto account.
 
 
 #### Home Page
