@@ -86,7 +86,6 @@ class Register extends Component {
 
             //sent all the params to the final url
             const url = searchURL + '?' + queryString
-
             console.log(url)
 
             //define the API call parameters
@@ -98,7 +97,7 @@ class Register extends Component {
                 }
             }
 
-            //useing the url and paramters above make the api call
+            //using the url and paramters above make the api call
             fetch(url, options)
 
                 // if the api returns data ...

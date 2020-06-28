@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import Navbar from './Navbar'
 
 
-
-
-
 class Account extends Component {
     render() {
         return (
