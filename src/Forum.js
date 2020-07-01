@@ -41,7 +41,7 @@ class Forum extends Component {
         console.log('button clicked!', { index })
         this.setState({ currentTabIndex: index })
     }
-// }
+    // }
     renderButtons() {
         return this.props.tabs.map((tab, index) => (
             <button key={index} type="submit" onClick={() => this.handleButtonClick(index)}>
@@ -78,14 +78,14 @@ class Forum extends Component {
                     <div className="postResults">
                         <h3>Results for "Routine":</h3>
                         {/* <h4>Larry posted:</h4>
-                    <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                    <p> Did you find this comment helpful? </p> */}
+                    <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>*/}
                         {this.renderButtons()}
                         {!!this.props.tabs.length && this.renderContent()}
-                        </div>
+                    </div>
 
-                        {this.state.helpfulCount} <button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful <i className="fa fa-thumbs-up" aria-hidden="true"></i></button>
-                        {this.state.notHelpfulCount} <button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful <i className="fa fa-thumbs-down" aria-hidden="true"></i></button>
+                    {/* <p> Did you find this comment helpful? </p> */}
+                    <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
+                    <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button>
                     <div>
                         <label for="post-comment">Post your comment about:</label>
                         <select name="cars" id="cars">
