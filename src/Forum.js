@@ -8,13 +8,23 @@ class Forum extends Component {
         this.state = {
             helpfulCount: 0,
             notHelpfulCount: 0,
-            currentTabIndex: 0
-
+            currentTabIndex: 0,
+            inputValue: ''
         }
-        this.handleTabClick = this.handleTabClick.bind(this);
     }
 
-    // componentDidMount(handleHelpful, handleNotHelpful, handleButtonClick){
+    static defaultProps = { tabs: [] };
+    state = {
+        currentTabIndex: 0
+    };
+
+    forumFilterOnChange = (event) => {
+        console.log('hi from onChnage', event.target.value)
+        this.setState({
+            inputValue: event.target.value
+        })
+    }
+
     handleHelpful = (e) => {
         e.preventDefault();
         this.setState(prevState => {
@@ -33,20 +43,15 @@ class Forum extends Component {
         })
     }
 
-    // static defaultProps = { tabs: [] };
-    // state = {
-    //     currentTabIndex: 0
-    // };
 
     handleTabClick = (index) => {
-        console.log('button clicked!', { index })
+        // console.log('button clicked!', { index })
         this.setState({ currentTabIndex: index })
     }
-    // }
 
     renderButtons() {
         return this.props.tabs.map((tab, index) => (
-            <button key={index} type="submit" onClick={() => this.handleTabClick(index)}>
+            <button key={index} type="button" onClick={() => this.handleTabClick(index)}>
                 {tab.name}
             </button>
         ))
@@ -62,15 +67,20 @@ class Forum extends Component {
     }
 
     render() {
+            const filteredForum =
+            this.props.tabs.filter(tab => {
+                return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase())
+            })
+    
         return (
             <section className="forum" >
                 <h2 className="">Forum</h2>
                 <form className="forum-form">
-                    <label for="search-term">Search for a post with keyword:</label>
-                    <input type="input" name="search" id="search-term" placeholder="keyword" />
-                    <button type="submit" id="submit-keyword">Search</button>
+                    <label htmlFor="search-term">Search for a post with keyword:</label>
+                    <input type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="keyword" />
+                    <button type="button" id="submit-keyword" onChange={this.forumFilterOnChange}>Search</button>
                     <p className="error-message">error: please enter a search term</p>
-                    <p className="error-message">error: sorry, we found 0 result for your search about " "</p>
+                    <p className="error-message">error: sorry, we found 0 result for your search about " "</p> 
 
                     {/* <div className="tab">
                         <button className="tablinks" onClick="openCity(event, 'London')">Routine </button>
@@ -78,10 +88,16 @@ class Forum extends Component {
                         <button className="tablinks" onClick="openCity(event, 'Tokyo')">Recipes </button>
                     </div > */}
 
+
                     <div className="postResults">
-                        <h3>Results for "Routine":</h3>
+                    <h3>Results for "Routine":</h3>
+                       {this.filteredForum} 
+
                         {/* <h4>Larry posted:</h4>
-                    <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>*/}
+                        <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>*/}
+                    </div>
+
+                    <div className="tabsContainer">
                         {this.renderButtons()}
                         {!!this.props.tabs.length && this.renderContent()}
                     </div>
@@ -89,9 +105,9 @@ class Forum extends Component {
                     {/* <p> Did you find this comment helpful? </p> */}
                     <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
                     <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button>
-                    
+
                     <div>
-                        <label for="post-comment">Post your comment about:</label>
+                        <label htmlFor="post-comment">Post your comment about:</label>
                         <select name="cars" id="cars">
                             <option value="">Select one</option>
                             <option value="">Routine</option>
@@ -99,7 +115,7 @@ class Forum extends Component {
                             <option value="">Recipes</option>
                         </select>
                     </div>
-                   
+
                     <p className="error-message">error: please enter a comment</p>
                     <p className="error-message">error: please select a category</p>
 
