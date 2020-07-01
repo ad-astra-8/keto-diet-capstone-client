@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar'
 
 
@@ -9,14 +10,15 @@ class Account extends Component {
                 <Navbar />
                 <section className="my-account">
                     <h1 className="">My Account:</h1>
-                    <h3><a href="#my-posts">See my posts</a></h3>
-                    <h3><a href="#favorites">See my favorite recipes</a></h3>
+                    <form className="account-page-form">
+                    <Link to="/MyPostsPage"><h3>See my posts</h3></Link>
+                    <Link to="/MyRecipesPage"><h3>See my favorite recipes</h3></Link>
 
                     <label>Update my account</label>
                     <button type="submit" id="update-button">Update</button>
                     <label>Delete my account</label>
                     <button type="submit" id="delete-button">Delete</button>
-                    <p>(links in blue will direct you to one of the pages below "my favorite" or "my posts")</p>
+                    </form>
                 </section>
             </div>
 

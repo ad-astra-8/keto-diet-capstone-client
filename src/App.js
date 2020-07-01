@@ -5,16 +5,24 @@ import HomePage from './HomePage'
 import AccountPage from './AccountPage'
 import MyRecipesPage from './MyRecipesPage'
 import MyPostsPage from './MyPostsPage'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 
 
 function App() {
   return (
     <main className="App">
-     <LandingPage />
-     <HomePage />
-     <AccountPage />
-     <MyRecipesPage />
-     <MyPostsPage />
+      <BrowserRouter>
+        <LandingPage />
+        <HomePage />
+        <AccountPage />
+        <Switch>
+          <Route path='/MyRecipesPage' component={MyRecipesPage} />
+          <Route path='/MyPostsPage' component={MyPostsPage} />
+          {/* <MyRecipesPage />
+          <MyPostsPage /> */}
+        </Switch>
+      </BrowserRouter>
     </main>
   );
 }

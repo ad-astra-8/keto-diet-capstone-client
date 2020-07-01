@@ -69,6 +69,9 @@ input::placeholder {
   font-size: 10px;
 }
 
+textarea {
+  border: solid rgb(32, 31, 31) 0.5px;
+}
 /* -------------------------------------
 Header styles (Main Module)
 (all the styles inside the < header > or < nav > tags)
