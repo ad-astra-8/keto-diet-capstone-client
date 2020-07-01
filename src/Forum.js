@@ -11,6 +11,7 @@ class Forum extends Component {
             currentTabIndex: 0
 
         }
+        this.handleTabClick = this.handleTabClick.bind(this);
     }
 
     // componentDidMount(handleHelpful, handleNotHelpful, handleButtonClick){
@@ -37,14 +38,15 @@ class Forum extends Component {
     //     currentTabIndex: 0
     // };
 
-    handleButtonClick = (index) => {
+    handleTabClick = (index) => {
         console.log('button clicked!', { index })
         this.setState({ currentTabIndex: index })
     }
     // }
+
     renderButtons() {
         return this.props.tabs.map((tab, index) => (
-            <button key={index} type="submit" onClick={() => this.handleButtonClick(index)}>
+            <button key={index} type="submit" onClick={() => this.handleTabClick(index)}>
                 {tab.name}
             </button>
         ))
@@ -75,6 +77,7 @@ class Forum extends Component {
                         <button className="tablinks" onClick="openCity(event, 'Paris')">Workout </button>
                         <button className="tablinks" onClick="openCity(event, 'Tokyo')">Recipes </button>
                     </div > */}
+
                     <div className="postResults">
                         <h3>Results for "Routine":</h3>
                         {/* <h4>Larry posted:</h4>
@@ -86,6 +89,7 @@ class Forum extends Component {
                     {/* <p> Did you find this comment helpful? </p> */}
                     <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
                     <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button>
+                    
                     <div>
                         <label for="post-comment">Post your comment about:</label>
                         <select name="cars" id="cars">
@@ -95,6 +99,7 @@ class Forum extends Component {
                             <option value="">Recipes</option>
                         </select>
                     </div>
+                   
                     <p className="error-message">error: please enter a comment</p>
                     <p className="error-message">error: please select a category</p>
 

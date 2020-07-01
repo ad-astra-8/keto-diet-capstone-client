@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 
 class MyRecipes extends Component {
     render() {
         return (
             <div>
-<Navbar />
+{/* <Navbar /> */}
             <section className="favorites">
 
                 <h1 className="">My favorite recipes:</h1>

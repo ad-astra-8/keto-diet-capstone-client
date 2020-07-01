@@ -10,10 +10,10 @@ class Account extends Component {
                 <Navbar />
                 <section className="my-account">
                     <h1 className="">My Account:</h1>
-                    <form className="account-page-form">
                     <Link to="/MyPostsPage"><h3>See my posts</h3></Link>
                     <Link to="/MyRecipesPage"><h3>See my favorite recipes</h3></Link>
 
+                    <form className="account-page-form">
                     <label>Update my account</label>
                     <button type="submit" id="update-button">Update</button>
                     <label>Delete my account</label>
