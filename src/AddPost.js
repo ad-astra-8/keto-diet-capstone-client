@@ -161,9 +161,10 @@ class AddPost extends Component {
                         <button
                             type="submit"
                             id="submit-btn"
-                        // disabled={
-                        //     this.state.formValid === false
-                        // }
+                            // disabled={
+                            //     this.state.formValid === false
+                            // }
+                            onChange={this.handleSubmit}
                         >Submit
                     </button>
 
