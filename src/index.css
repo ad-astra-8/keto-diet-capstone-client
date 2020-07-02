@@ -220,11 +220,11 @@ ol {
 .favorite {
   padding: 8px;
   text-align: center;  
-
-  
 }
 
-
+#update-password {
+  width: 150px;
+}
 
 /* -------------------------------------
 Footer styles (Main Module)

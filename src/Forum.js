@@ -69,7 +69,7 @@ class Forum extends Component {
     render() {
             const filteredForum =
             this.props.tabs.filter(tab => {
-                return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase())
+                return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase()) 
             })
     
         return (
@@ -77,8 +77,8 @@ class Forum extends Component {
                 <h2 className="">Forum</h2>
                 <form className="forum-form">
                     <label htmlFor="search-term">Search for a post with keyword:</label>
-                    <input type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="keyword" />
-                    <button type="button" id="submit-keyword" onChange={this.forumFilterOnChange}>Search</button>
+                    <input type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="enter keyword" />
+                    {/* <button type="button" id="submit-keyword" onChange={this.forumFilterOnChange}>Search</button> */}
                     <p className="error-message">error: please enter a search term</p>
                     <p className="error-message">error: sorry, we found 0 result for your search about " "</p> 
 
@@ -90,9 +90,8 @@ class Forum extends Component {
 
 
                     <div className="postResults">
-                    <h3>Results for "Routine":</h3>
-                       {this.filteredForum} 
-
+                    <h3>Results matching your search:</h3>
+                    {this.state.inputValue && filteredForum.map(({content}) => ( <p style={{marginBottom:'10px', borderBottom: '1px solid black'}}>{content}</p>))}
                         {/* <h4>Larry posted:</h4>
                         <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>*/}
                     </div>
