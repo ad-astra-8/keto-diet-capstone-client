@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import config from './config'
+import Navbar from './Navbar'
 
 
 class Recipes extends Component {
@@ -111,6 +112,8 @@ class Recipes extends Component {
   render() {
     const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
     return (
+      <div>
+      <Navbar />
       <section className="recipes" onSubmit={this.handleSubmit}>
         <h2 className="forum">Keto Recipes</h2>
         <form className="search-recipe-form">
@@ -131,7 +134,7 @@ class Recipes extends Component {
         <h4>Keto Chocolate Cupcakes:</h4>
         <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
       </section>
-
+      </div>
     );
   }
 }

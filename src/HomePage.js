@@ -37,19 +37,24 @@ class HomePage extends Component {
                 <section className="homepage">
                     <h2 className="homepage-h2">Homepage</h2>
 
-                    <p style={{marginBottom:'20px', marginTop:'20px', fontSize:'20px'}}>"This is a presentation and explanation of the App"</p>
+                    <p style={{ marginBottom: '20px', marginTop: '20px', fontSize: '20px', textAlign: 'center' }}>"This is a presentation and explanation of the App"</p>
                     {/* <p>Click on the buttons inside the tabbed menu:</p> */}
-
+                    <div className="icon-container" style={{ marginBottom: '20px', marginTop: '20px', fontSize: '20px', display: 'inline-flex' }}>
+                        <img src="/images/about-image.jpg" alt="about-icon" />
+                        <img src="/images/recipe-image.jpg" alt="recipe-icon" />
+                        {/* <img src="/images/forum-image.jpg" alt="forum-icon" /> */}
+                        <img src="/images/forum-image2.jpg" alt="forum-icon" />
+                    </div>
                     <div className="tab">
                         {/* <button className="tablinks" onClick="openCity(event, 'London')">About <i className="fa fa-question" aria-hidden="true"></i></button>
                     <button className="tablinks" onClick="openCity(event, 'Paris')">Recipes <i className="fa fa-cutlery" aria-hidden="true"></i></button>
                     <button className="tablinks" onClick="openCity(event, 'Tokyo')">Forum <i className="fa fa-comments-o" aria-hidden="true"></i></button> */}
                     </div>
-                    <p>(As you select a tab, one of the page below will appear: about recipes or forum)</p>
+                    {/* <p>(As you select a tab, one of the page below will appear: about recipes or forum)</p> */}
 
                     <About />
                     <Recipes />
-                    <Forum tabs={tabsProp}/>
+                    <Forum tabs={tabsProp} />
                 </section>
             </div>
         )
