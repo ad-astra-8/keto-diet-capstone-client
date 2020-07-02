@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
-
+import AddPost from './AddPost'
 
 
 class Forum extends Component {
@@ -53,7 +53,7 @@ class Forum extends Component {
     renderButtons() {
         return this.props.tabs.map((tab, index) => (
             <button key={index} type="button" onClick={() => this.handleTabClick(index)}>
-                {tab.name}
+                {tab.tabName}
             </button>
         ))
     }
@@ -72,7 +72,7 @@ class Forum extends Component {
             this.props.tabs.filter(tab => {
                 return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase())
             })
-
+            console.log(this.props.tabs)
         return (
             <div>
                 <Navbar />
@@ -94,7 +94,7 @@ class Forum extends Component {
 
                         <div className="postResults">
                             <h3>Results matching your search:</h3>
-                            {this.state.inputValue && filteredForum.map(({ content }) => (<p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{content}</p>))}
+                            {this.state.inputValue && filteredForum.map(({ title, content }) => (<p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{title}{content}</p>))}
                             {/* <h4>Larry posted:</h4>
                         <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>*/}
                         </div>
@@ -108,7 +108,7 @@ class Forum extends Component {
                         <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
                         <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button>
 
-                        <div>
+                        {/* <div>
                             <label htmlFor="post-comment">Post your comment about:</label>
                             <select name="cars" id="cars">
                                 <option value="">Select one</option>
@@ -116,17 +116,17 @@ class Forum extends Component {
                                 <option value="">Workout</option>
                                 <option value="">Recipes</option>
                             </select>
-                        </div>
+                        </div> */}
 
-                        <p className="error-message">error: please enter a comment</p>
-                        <p className="error-message">error: please select a category</p>
+                        {/* <p className="error-message">error: please enter a comment</p>
+                        <p className="error-message">error: please select a category</p> */}
 
-
-                        <div className="comment-area">
+                        {/* <div className="comment-area">
                             <textarea id="post-comment" placeholder="leave your comment here"></textarea>
                             <br />
                             <button type="submit" id="comment-submit-button">Submit</button>
-                        </div>
+                        </div> */}                        
+                        <AddPost tabs={this.props.tabs} />
                     </form>
                 </section>
             </div>

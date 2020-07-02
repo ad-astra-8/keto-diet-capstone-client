@@ -6,6 +6,8 @@ import HomePage from './HomePage'
 import AccountPage from './AccountPage'
 // import MyRecipesPage from './MyRecipesPage'
 // import MyPostsPage from './MyPostsPage'
+// import About from './About'
+
 
 
 
@@ -14,14 +16,14 @@ function App() {
     <main className="App">
     <BrowserRouter>
         <LandingPage />
-        {/* <Switch> */}
           <HomePage />
+          {/* <About /> */}
           <AccountPage />
+          {/* <Route path='/account' component={AccountPage} /> */}
           {/* <Route path='/MyRecipesPage' component={MyRecipesPage} />
           <Route path='/MyPostsPage' component={MyPostsPage} /> */}
           {/* <MyRecipesPage />
           <MyPostsPage /> */}
-        {/* </Switch> */}
       </BrowserRouter>
     </main>
   );

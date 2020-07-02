@@ -25,7 +25,7 @@ body {}
 
 section {
   padding: 40px 20px 40px 20px;
-  border-bottom: solid black 1px;
+  /* border-bottom: solid black 1px; */
 }
 
 h1 {
@@ -137,7 +137,7 @@ li a {
  /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   background-color: #f1f1f1;
 }
 
