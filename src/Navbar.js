@@ -16,6 +16,7 @@ function Navbar() {
           <li className="log-out"><a href="#log out">Log out</a></li> */}
           <NavLink to="/homePage"><li>Home</li></NavLink>
           <NavLink to="/about"><li>About</li></NavLink>
+          <NavLink to="/search-recipes"><li>Recipes</li></NavLink>
           <NavLink to="/forum"><li>Forum</li></NavLink>
           <NavLink to="/account"><li>My Account</li></NavLink>
           <li className="log-out"><a href="#log out">Log out</a></li>

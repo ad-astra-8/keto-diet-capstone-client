@@ -179,9 +179,8 @@ li a {
   text-align: center;
 }
 
-img {
-  width: 300px;
-  height: 260px;
+.icon-container img {
+  width: 33%;
   float: right;
   padding: 20px;
 

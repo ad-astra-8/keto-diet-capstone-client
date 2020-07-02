@@ -145,7 +145,7 @@ class AddPost extends Component {
                         <select id="tabName" name="tabName" value={this.state.tabName.value} onChange={e => this.updatetabName(e.target.value)}>
                             <option value={this.state.tabName}>Select a folder</option>
                             {this.props.tabs.map((tab, index) => (
-                                <option key={tab.index} value={tab.index}>{tab.tabName}</option>))}
+                                <option key={index} value={tab.index}>{tab.tabName}</option>))}
                             {/* <option value="">Select one</option>
                             <option value='Routine tab'>Routine</option>
                             <option value="">Workout</option>

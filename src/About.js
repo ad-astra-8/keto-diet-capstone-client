@@ -6,8 +6,9 @@ import Navbar from './Navbar'
 function About() {
   return (
     <div>
+      <section className="About">      
       <Navbar />
-      <section className="About">
+
         <h3>About:</h3>
         <img src="http://via.placeholder.com/640x360" alt="placeholder" />
         <p className="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 

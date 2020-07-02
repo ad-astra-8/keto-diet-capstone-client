@@ -126,8 +126,9 @@ class Forum extends Component {
                             <br />
                             <button type="submit" id="comment-submit-button">Submit</button>
                         </div> */}                        
-                        <AddPost tabs={this.props.tabs} />
                     </form>
+                                            <AddPost tabs={this.props.tabs} />
+
                 </section>
             </div>
         )
