@@ -20,7 +20,7 @@ class Forum extends Component {
     };
 
     forumFilterOnChange = (event) => {
-        console.log('hi from onChnage', event.target.value)
+        console.log('hi from onChange', event.target.value)
         this.setState({
             inputValue: event.target.value
         })
@@ -72,7 +72,7 @@ class Forum extends Component {
             this.props.tabs.filter(tab => {
                 return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase())
             })
-            console.log(this.props.tabs)
+        console.log(this.props.tabs)
         return (
             <div>
                 <Navbar />
@@ -125,9 +125,10 @@ class Forum extends Component {
                             <textarea id="post-comment" placeholder="leave your comment here"></textarea>
                             <br />
                             <button type="submit" id="comment-submit-button">Submit</button>
-                        </div> */}                        
+                        </div> */}
                     </form>
-                                            <AddPost tabs={this.props.tabs} />
+
+                    <AddPost tabs={this.props.tabs} />
 
                 </section>
             </div>

@@ -184,6 +184,8 @@ li a {
   height: 190px;
   /* float: right; */
   padding: 20px;
+  margin-bottom: 20px; 
+  margin-top: 20px;
 
 }
 
@@ -194,9 +196,6 @@ li a {
   width: 100%;
 }
 
-span {
-
-}
 p.lorem {
     clear: left;
 
