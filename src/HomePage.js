@@ -43,7 +43,8 @@ class HomePage extends Component {
                     <h2 className="homepage-h2">Homepage</h2>
 
                     <p style={{ marginBottom: '20px', marginTop: '20px', fontSize: '20px', textAlign: 'center' }}>"This is a presentation and explanation of the App"</p>
-                    <div className="icon-container" style={{ marginBottom: '20px', marginTop: '20px', fontSize: '20px' }}>
+                    
+                    <div className="icon-container" style={{ marginBottom: '20px', marginTop: '20px'}}>
                         <Link to="about"><img src="/images/about-image.jpg" alt="about-icon" /></Link>
                         <Link to="search-recipes"><img src="/images/recipe-image.jpg" alt="recipe-icon" /></Link>
                         <Link to="forum"><img src="/images/forum-image2.jpg" alt="forum-icon" /></Link>

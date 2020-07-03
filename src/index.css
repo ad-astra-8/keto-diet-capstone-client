@@ -181,7 +181,8 @@ li a {
 
 .icon-container img {
   width: 33%;
-  float: right;
+  height: 190px;
+  /* float: right; */
   padding: 20px;
 
 }
