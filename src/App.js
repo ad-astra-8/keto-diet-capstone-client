@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Data from "./Data"
+// import Data from "./Data"
 import LandingPage from './LandingPage'
 import HomePage from './HomePage'
 import AccountPage from './AccountPage'
@@ -15,9 +15,9 @@ import Forum from './Forum'
 
 class App extends Component {
   render(){
-  const MyData = Data.map((tabsProp, key) =>
-    <Data tabsProp={tabsProp} key={tabsProp.id} />)
-  console.log(MyData);
+  // const MyData = Data.map((tabsProp, key) =>
+  //   <Data tabsProp={tabsProp} key={tabsProp.id} />)
+  // console.log(MyData);
 
   return (
     <main className="App">
@@ -27,7 +27,7 @@ class App extends Component {
         {/* <About /> */}
         <Switch>
           <Route exact path='/' component={LandingPage} />
-          <Route exact path='/homepage' component={HomePage} />
+          <Route exact path='/:homepage' component={HomePage} />
           <Route exact path='/about' component={About} />
           <Route exact path='/search-recipes' component={Recipes} />
           <Route exact path='/forum' component={Forum} />

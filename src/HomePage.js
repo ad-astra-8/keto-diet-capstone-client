@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Data from "./Data"
+
 // import About from './About'
 // import Recipes from './Recipes'
 // import Forum from './Forum'
@@ -34,6 +36,11 @@ class HomePage extends Component {
     }
 
     render() {
+        // const MyData = Data.map((tabsProp, key) =>
+        //     <Forum tabsProp={tabsProp} key={tabsProp.id} />)
+        // console.log(MyData);
+
+
         // console.log(tabsProp)
         return (
             <div>
@@ -57,7 +64,7 @@ class HomePage extends Component {
 
                     {/* <About /> */}
                     {/* <Recipes />*/}
-                  {/* <Forum tabs={tabsProp} />  */}
+                    {/* <Forum tabs={tabsProp} />  */}
                 </section>
             </div>
         )
