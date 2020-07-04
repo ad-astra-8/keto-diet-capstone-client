@@ -10,7 +10,7 @@ class Recipes extends Component {
     this.state = {
       // error: null,
       searchTerm: "",
-      recipeObject: {}
+      results: []
     }
   }
 
@@ -79,7 +79,6 @@ class Recipes extends Component {
 
         }
       }
-
       //using the url and paramters above make the api call
       fetch(url, options)
 
@@ -94,12 +93,13 @@ class Recipes extends Component {
         // use the json api output
         .then(data => {
           this.setState({
-            recipeObject : data
+            results: data
 
           })
           //check if there is meaningful data
           console.log(data);
-          console.log(this.state.recipeObject.results)
+          console.log(this.state.results)
+
           // check if there are no results
           if (data.totalItems === 0) {
             throw new Error('Sorry, we found 0 result for your search.')
@@ -110,7 +110,9 @@ class Recipes extends Component {
           // this.setState({
           //     error: err.message
           // })
+
         })
+
 
 
     }
@@ -119,15 +121,16 @@ class Recipes extends Component {
 
   render() {
     const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
-//    const displayResults = this.state.recipeObject.results.map(({ title, image, sourceUrl, summary, sourceName }) => (
-//     <li>
-//     <h4 class="title"><a href="${responseJson.results[i].sourceUrl}">{title}</a></h4> 
-//   {/* <a href="${responseJson.results[i].sourceUrl}" target='_blank'><img class="recipe-image" src='${responseJson.results[i].image}' alt="recipe image" /></a> */}
-//     <p class="summary">{summary}</p>              
-//     <p class="sourcename">{sourceName}</p>
-// </li>
-// )
-//  )
+    //    const displayResults = this.state.recipeObject.results.map(({ title, image, sourceUrl, summary, sourceName }) => (
+    //     <li>
+    //     <h4 class="title"><a href="${responseJson.results[i].sourceUrl}">{title}</a></h4> 
+    //   {/* <a href="${responseJson.results[i].sourceUrl}" target='_blank'><img class="recipe-image" src='${responseJson.results[i].image}' alt="recipe image" /></a> */}
+    //     <p class="summary">{summary}</p>              
+    //     <p class="sourcename">{sourceName}</p>
+    // </li>
+    // )
+    //  )
+    const displayResults = this.state.results.map(result => (<p>{result.title}</p>))
 
     return (
       <div>
@@ -139,22 +142,14 @@ class Recipes extends Component {
             <label htmlFor="search-term">Search for a keto recipe with keyword:</label>
             <input type="input" name="query" className="search-term" placeholder="chocolate" value="chocolate" required />
             <button type="submit" id="submit-searchTerm">Search</button>
-            {/* {this.state.results.title} */}
-
-
-
+            {displayResults}
+            {/* {this.state.recipeObject.results.map((results, index) => {
+              return <p>{results.title}</p>
+            })} */}
             {/* <p className="error-message">error: please enter a search term</p>
             <p className="error-message">error: sorry, we found 0 result for your search about " "</p> */}
           </form>
           <h3>Results for "chocolate dessert":</h3>
-          {/* <h4>Keto Brownies:</h4>
-          <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-          <h4>Keto Chocolate Mousse:</h4>
-          <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-          <h4>Keto Chocolate Cupcakes:</h4>
-          <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p> */}
         </section>
       </div>
     );
