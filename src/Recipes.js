@@ -61,12 +61,13 @@ class Recipes extends Component {
       // //check if the state is populated with the search params data
       console.log(this.state.searchTerm)
 
-      const searchURL = `${config.API_ENDPOINT}/recipes-page`
+      // const searchURL = `${config.API_ENDPOINT}/recipes-page`
+      const searchURL = `${config.API_ENDPOINT}`
 
       const queryString = this.formatQueryParams(data)
 
       //sent all the params to the final url
-      const url = searchURL + '?' + queryString
+      const url = searchURL + '?' + queryString + '&diet=ketogenic&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef'
       console.log(url)
 
       const options = {
@@ -78,6 +79,7 @@ class Recipes extends Component {
         }
       }
 
+      componentDidMount(){
       //useing the url and paramters above make the api call
       fetch(url, options)
 
@@ -92,7 +94,7 @@ class Recipes extends Component {
         // use the json api output
         .then(data => {
 
-          //check if there is meaningfull data
+          //check if there is meaningful data
           console.log(data);
           // check if there are no results
           if (data.totalItems === 0) {
@@ -108,9 +110,22 @@ class Recipes extends Component {
     }
 
   }
+  }
+
+
+
+
+
+
+
 
   render() {
     const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
+
+
+
+
+
     return (
       <div>
       <Navbar />

@@ -112,11 +112,11 @@ class AddPost extends Component {
     };
 
     render() {
-        const { errors } = this.state;
-        const folders = this.context.folders;
-        if (this.state.appError) {
-            return <p className="error">{this.state.appError}</p>;
-        }
+        // const { errors } = this.state;
+        // const folders = this.context.folders;
+        // if (this.state.appError) {
+        //     return <p className="error">{this.state.appError}</p>;
+        // }
         console.log(this.props.tabs)
 
         return (

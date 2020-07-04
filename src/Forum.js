@@ -67,6 +67,16 @@ class Forum extends Component {
         )
     }
 
+    renderTitle() {
+        const currentTitle = this.props.tabs[this.state.currentTabIndex]
+        return (
+            <div className='content'>
+                {currentTitle.title}
+            </div>
+        )
+    }
+
+
     render() {
         const filteredForum =
             this.props.tabs.filter(tab => {
@@ -82,8 +92,8 @@ class Forum extends Component {
                         <label htmlFor="search-term">Search for a post with keyword:</label>
                         <input type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="enter keyword" />
                         {/* <button type="button" id="submit-keyword" onChange={this.forumFilterOnChange}>Search</button> */}
-                        <p className="error-message">error: please enter a search term</p>
-                        <p className="error-message">error: sorry, we found 0 result for your search about " "</p>
+                        {/* <p className="error-message">error: please enter a search term</p>
+                        <p className="error-message">error: sorry, we found 0 result for your search about " "</p> */}
 
                         {/* <div className="tab">
                         <button className="tablinks" onClick="openCity(event, 'London')">Routine </button>
@@ -94,11 +104,18 @@ class Forum extends Component {
 
                         <div className="postResults">
                             <h3>Results matching your search:</h3>
-                            {this.state.inputValue && filteredForum.map(({ title, content }) => (<p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{title}{content}</p>))}
+                            {this.state.inputValue && filteredForum.map(({ title, content }) => (
+                            <div>
+                            <p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{title}</p>
+                            <p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{content}</p>
+                            </div>
+                            )
+                            )}
                         </div>
 
                         <div className="tabsContainer">
                             {this.renderButtons()}
+                            {this.renderTitle()}
                             {!!this.props.tabs.length && this.renderContent()}
                         </div>
 

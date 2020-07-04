@@ -42,6 +42,7 @@ class HomePage extends Component {
 
 
         console.log(this.props.tabs)
+
         return (
             <div>
                 <Navbar />
