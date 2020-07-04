@@ -8,8 +8,9 @@ class Recipes extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      error: null,
-      searchTerm: ""
+      // error: null,
+      searchTerm: "",
+      recipeObject: {}
     }
   }
 
@@ -55,7 +56,7 @@ class Recipes extends Component {
       //assigning the object from the form data to params in the state
       this.setState({
         searchTerm: data,
-        error: null
+        // error: null
       })
 
       // //check if the state is populated with the search params data
@@ -67,7 +68,7 @@ class Recipes extends Component {
       const queryString = this.formatQueryParams(data)
 
       //sent all the params to the final url
-      const url = searchURL + '?' + queryString + '&diet=ketogenic&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef'
+      const url = searchURL + '?' + queryString + '&diet=ketogenic&number=3&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef'
       console.log(url)
 
       const options = {
@@ -79,8 +80,7 @@ class Recipes extends Component {
         }
       }
 
-      componentDidMount(){
-      //useing the url and paramters above make the api call
+      //using the url and paramters above make the api call
       fetch(url, options)
 
         // if the api returns data ...
@@ -93,9 +93,13 @@ class Recipes extends Component {
         })
         // use the json api output
         .then(data => {
+          this.setState({
+            recipeObject : data
 
+          })
           //check if there is meaningful data
           console.log(data);
+          console.log(this.state.recipeObject.results)
           // check if there are no results
           if (data.totalItems === 0) {
             throw new Error('Sorry, we found 0 result for your search.')
@@ -107,48 +111,51 @@ class Recipes extends Component {
           //     error: err.message
           // })
         })
+
+
     }
-
   }
-  }
-
-
-
-
-
-
 
 
   render() {
     const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
-
-
-
-
+//    const displayResults = this.state.recipeObject.results.map(({ title, image, sourceUrl, summary, sourceName }) => (
+//     <li>
+//     <h4 class="title"><a href="${responseJson.results[i].sourceUrl}">{title}</a></h4> 
+//   {/* <a href="${responseJson.results[i].sourceUrl}" target='_blank'><img class="recipe-image" src='${responseJson.results[i].image}' alt="recipe image" /></a> */}
+//     <p class="summary">{summary}</p>              
+//     <p class="sourcename">{sourceName}</p>
+// </li>
+// )
+//  )
 
     return (
       <div>
-      <Navbar />
-      <section className="recipes" onSubmit={this.handleSubmit}>
-        <h2 className="forum">Keto Recipes</h2>
-        <form className="search-recipe-form">
-          {errorMessage}
-          <label htmlFor="search-term">Search for a keto recipe with keyword:</label>
-          <input type="input" name="searchRecipes" className="search-term" placeholder="chocolate" required/>
-          <button type="submit" id="submit-searchTerm">Search</button>
-          <p className="error-message">error: please enter a search term</p>
-          <p className="error-message">error: sorry, we found 0 result for your search about " "</p>
-        </form>
-        <h3>Results for "chocolate dessert":</h3>
-        <h4>Keto Brownies:</h4>
-        <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <Navbar />
+        <section className="recipes" onSubmit={this.handleSubmit}>
+          <h2 className="forum">Keto Recipes</h2>
+          <form className="search-recipe-form">
+            {errorMessage}
+            <label htmlFor="search-term">Search for a keto recipe with keyword:</label>
+            <input type="input" name="query" className="search-term" placeholder="chocolate" value="chocolate" required />
+            <button type="submit" id="submit-searchTerm">Search</button>
+            {/* {this.state.results.title} */}
 
-        <h4>Keto Chocolate Mousse:</h4>
-        <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
-        <h4>Keto Chocolate Cupcakes:</h4>
-        <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </section>
+
+            {/* <p className="error-message">error: please enter a search term</p>
+            <p className="error-message">error: sorry, we found 0 result for your search about " "</p> */}
+          </form>
+          <h3>Results for "chocolate dessert":</h3>
+          {/* <h4>Keto Brownies:</h4>
+          <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+          <h4>Keto Chocolate Mousse:</h4>
+          <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+          <h4>Keto Chocolate Cupcakes:</h4>
+          <p className="lorem">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequatDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p> */}
+        </section>
       </div>
     );
   }
