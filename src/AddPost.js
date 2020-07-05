@@ -82,7 +82,9 @@ class AddPost extends Component {
         };
         this.setState({ appError: null });
 
-        fetch(config.API_NOTES, {
+const url = `${config.API_ENDPOINT}`;
+
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify(note),
             headers: {
@@ -106,6 +108,8 @@ class AddPost extends Component {
                 // this.setState({ data });
                 // this.props.history.push('/', data);
             })
+
+            
             .catch(error => {
                 // this.setState({ appError: error });
             });
@@ -117,7 +121,7 @@ class AddPost extends Component {
         // if (this.state.appError) {
         //     return <p className="error">{this.state.appError}</p>;
         // }
-        console.log(this.props.tabs)
+        // console.log(this.props.tabs)
 
         return (
             <div>
@@ -127,7 +131,8 @@ class AddPost extends Component {
                         {/* <legend>
                             <h3>Add Note</h3>
                         </legend> */}
-                        <label htmlFor="name"><h4>Post Title</h4></label>
+                        <fieldset className="post-div">
+                        <label htmlFor="name">Post Title</label>
                         <input
                             type="text"
                             className="add-note__name"
@@ -136,20 +141,17 @@ class AddPost extends Component {
                             defaultValue=""
                             onChange={this.handleChange}
                         />
-
+                        </fieldset>
                         {/* {errors.name.length > 0 && (
                     <ValidationError message={errors.name} />)} */}
                         {/* <label htmlFor="content"><h4>Post Content</h4></label>*/}
+                        <fieldset className="post-div">
                         <label htmlFor="post-comment">Post your comment about:</label>
 
                         <select id="tabName" name="tabName" value={this.state.tabName.value} onChange={e => this.updatetabName(e.target.value)}>
                             <option value={this.state.tabName}>Select a folder</option>
                             {this.props.tabs.map((tab, index) => (
                                 <option key={index} value={tab.index}>{tab.tabName}</option>))}
-                            {/* <option value="">Select one</option>
-                            <option value='Routine tab'>Routine</option>
-                            <option value="">Workout</option>
-                            <option value="">Recipes</option> */}
                         </select>
 
                         <textarea id="post-comment" placeholder="leave your comment here" name="content"
@@ -158,6 +160,7 @@ class AddPost extends Component {
                             onChange={this.handleChange}
                         >
                         </textarea>
+                        </fieldset>
                         <button
                             type="submit"
                             id="submit-btn"

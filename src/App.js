@@ -21,7 +21,7 @@ class App extends Component {
     //   render={props => <HomePage tabs={tabsProp} key={tabsProp.id} />}
     // />
     // )
-    console.log(tabsProp)
+    // console.log(tabsProp)
 
     return (
       <main className="App">

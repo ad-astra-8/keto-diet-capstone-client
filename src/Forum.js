@@ -52,7 +52,7 @@ class Forum extends Component {
 
     renderButtons() {
         return this.props.tabs.map((tab, index) => (
-            <button key={index} type="button" onClick={() => this.handleTabClick(index)}>
+            <button className="tab" key={index} type="button" onClick={() => this.handleTabClick(index)}>
                 {tab.tabName}
             </button>
         ))
@@ -70,9 +70,9 @@ class Forum extends Component {
     renderTitle() {
         const currentTitle = this.props.tabs[this.state.currentTabIndex]
         return (
-            <div className='content'>
-                {currentTitle.title}
-            </div>
+            <h2 className='content-title'>
+                "{currentTitle.title}"
+            </h2>
         )
     }
 
@@ -82,22 +82,23 @@ class Forum extends Component {
             this.props.tabs.filter(tab => {
                 return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase())
             })
-        console.log(this.props.tabs)
+        // console.log(this.props.tabs)
         return (
             <div>
                 <Navbar />
                 <section className="forum" >
-                    <h2 className="">Forum</h2>
+                    <h2 className="section-title">Forum</h2>
                     <form className="forum-form">
-                        <label htmlFor="search-term">Search for a post with keyword:</label>
-                        <input type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="enter keyword" />
-
+                        <fieldset className="search-div">
+                        <label className="search-label" htmlFor="search-term">Search for a post with keyword:</label>
+                        <input className="search-input" type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="enter keyword" />
+                        </fieldset>
                         <div className="postResults">
-                            <h3>Results matching your search:</h3>
+                            <h2>Results matching your specific search:</h2>
                             {this.state.inputValue && filteredForum.map(({ title, content }) => (
-                            <div>
-                            <p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{title}</p>
-                            <p style={{ marginBottom: '10px', borderBottom: '1px solid black' }}>{content}</p>
+                            <div className="searchTerm-results">
+                            <h2>{title}</h2>
+                            <p>{content}</p>
                             </div>
                             )
                             )}
@@ -110,8 +111,8 @@ class Forum extends Component {
                         </div>
 
                         {/* <p> Did you find this comment helpful? </p> */}
-                        <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
-                        <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button>
+                        {/* <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
+                        <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button> */}
 
                         {/* <div>
                             <label htmlFor="post-comment">Post your comment about:</label>
