@@ -122,7 +122,7 @@ li {
 }
 
 li a:hover {
-  background-color: rgb(34, 33, 33);
+  /* background-color: rgb(34, 33, 33); */
 }
 
 li a {
@@ -200,6 +200,45 @@ p.lorem {
     clear: left;
 
 }
+
+.results-list {
+  list-style-type: none;
+    margin: 0;
+    /* padding: 60px, 20px, 60px, 20px; */
+    overflow: hidden;
+    float: right;
+    /* width: 100%; */
+    text-align: center;
+    margin-bottom: 60px;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #fff;
+
+}
+
+.results-list li {
+  display: inline-block;
+  /* padding: 40px, 20px, 40px, 20px; */
+  background-color: #fff;
+
+}
+
+.results-link:hover {
+  /* background-color: pink; */
+}
+
+.results-link{
+  
+}
+
+
+.results-list a {
+  background-color: rgb(255, 255, 255);
+
+}
+
+
+
 
 #search-term {
   width: 30%;

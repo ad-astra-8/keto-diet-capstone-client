@@ -91,16 +91,6 @@ class Forum extends Component {
                     <form className="forum-form">
                         <label htmlFor="search-term">Search for a post with keyword:</label>
                         <input type="text" value={this.state.inputValue} onChange={this.forumFilterOnChange} id="search-term" placeholder="enter keyword" />
-                        {/* <button type="button" id="submit-keyword" onChange={this.forumFilterOnChange}>Search</button> */}
-                        {/* <p className="error-message">error: please enter a search term</p>
-                        <p className="error-message">error: sorry, we found 0 result for your search about " "</p> */}
-
-                        {/* <div className="tab">
-                        <button className="tablinks" onClick="openCity(event, 'London')">Routine </button>
-                        <button className="tablinks" onClick="openCity(event, 'Paris')">Workout </button>
-                        <button className="tablinks" onClick="openCity(event, 'Tokyo')">Recipes </button>
-                    </div > */}
-
 
                         <div className="postResults">
                             <h3>Results matching your search:</h3>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from './config'
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
 
 
 class Recipes extends Component {
@@ -9,8 +10,9 @@ class Recipes extends Component {
     super(props)
     this.state = {
       // error: null,
+      loading: false,
       searchTerm: "",
-      results: []
+      recipe: []
     }
   }
 
@@ -19,15 +21,6 @@ class Recipes extends Component {
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(searchTerm[key])}`)
     return queryItems.join('&')
   }
-
-  //   validateName(inputString) {
-  //     let outputString = inputString;
-  //     if (!inputString === '') {
-  //       outputString = null
-  //   }
-  //     return outputString
-  // }
-
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -43,14 +36,11 @@ class Recipes extends Component {
     }
     console.log(data)
     let { searchTerm } = data
-    //starting validation
-    //validate searchTerm
     if (searchTerm === '') {
       this.setState({
         error: 'You must enter a search term!'
       })
     }
-    //if validation successful, make API call
     else {
 
       //assigning the object from the form data to params in the state
@@ -68,7 +58,7 @@ class Recipes extends Component {
       const queryString = this.formatQueryParams(data)
 
       //sent all the params to the final url
-      const url = searchURL + '?' + queryString + '&diet=ketogenic&number=3&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef'
+      const url = searchURL + '?' + queryString + '&diet=ketogenic&number=6&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef'
       console.log(url)
 
       const options = {
@@ -79,6 +69,8 @@ class Recipes extends Component {
 
         }
       }
+
+      this.setState({ loading: true })
       //using the url and paramters above make the api call
       fetch(url, options)
 
@@ -90,15 +82,16 @@ class Recipes extends Component {
           // ... convert it to json
           return res.json()
         })
+
         // use the json api output
         .then(data => {
           this.setState({
-            results: data
-
+            loading: false,
+            recipe: data.results
           })
+
           //check if there is meaningful data
-          console.log(data);
-          console.log(this.state.results)
+          console.log(data.results);
 
           // check if there are no results
           if (data.totalItems === 0) {
@@ -107,30 +100,31 @@ class Recipes extends Component {
 
         })
         .catch(err => {
-          // this.setState({
-          //     error: err.message
-          // })
+          this.setState({
+            error: err.message
+          })
 
         })
 
 
 
     }
-  }
 
+  }
 
   render() {
     const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
-    //    const displayResults = this.state.recipeObject.results.map(({ title, image, sourceUrl, summary, sourceName }) => (
-    //     <li>
-    //     <h4 class="title"><a href="${responseJson.results[i].sourceUrl}">{title}</a></h4> 
-    //   {/* <a href="${responseJson.results[i].sourceUrl}" target='_blank'><img class="recipe-image" src='${responseJson.results[i].image}' alt="recipe image" /></a> */}
-    //     <p class="summary">{summary}</p>              
-    //     <p class="sourcename">{sourceName}</p>
-    // </li>
-    // )
-    //  )
-    const displayResults = this.state.results.map(result => (<p>{result.title}</p>))
+    const displayResults = this.state.loading ? "loading the meals..." : this.state.recipe.map((result, index) =>
+      (
+        <div>
+          <h2>{result.title}</h2>
+          <li key={index} className="results-link">
+            <Link to={result.sourceUrl} target="_blank"><img className="results-link" src={result.image} /></Link>
+            <p>{result.sourceName}</p>
+          </li>
+        </div>
+      ))
+
 
     return (
       <div>
@@ -142,12 +136,11 @@ class Recipes extends Component {
             <label htmlFor="search-term">Search for a keto recipe with keyword:</label>
             <input type="input" name="query" className="search-term" placeholder="chocolate" value="chocolate" required />
             <button type="submit" id="submit-searchTerm">Search</button>
-            {displayResults}
-            {/* {this.state.recipeObject.results.map((results, index) => {
-              return <p>{results.title}</p>
-            })} */}
-            {/* <p className="error-message">error: please enter a search term</p>
-            <p className="error-message">error: sorry, we found 0 result for your search about " "</p> */}
+            <div>
+              <ul className="results-list">
+                {displayResults}
+              </ul>
+            </div>
           </form>
           <h3>Results for "chocolate dessert":</h3>
         </section>
