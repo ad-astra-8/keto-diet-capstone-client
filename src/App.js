@@ -14,13 +14,47 @@ import tabsProp from './Data';
 
 
 class App extends Component {
+state={
+  tabsProp: []
+}
+
+componentDidMount(){
+  console.warn('*****mounting****')
+  fetch('http://localhost:8000/api/notes')
+
+  // if the api returns data ...
+  .then(res => {
+      if (!res.ok) {
+          throw new Error('Something went wrong, please try again later.')
+      }
+      // ... convert it to json
+      return res.json()
+  })
+  // use the json api output
+  .then(data => {
+
+      //check if there is meaningful data
+      console.log(data);
+      this.setState({
+        tabsProp : data
+      })
+  })
+  .catch(err => {
+    console.error(err)
+      // this.setState({
+      //     error: err.message
+      // })
+  })
+}
+
+
+
+
+
+
+
+
   render() {
-    // const MyData = Data.map((tabsProp, key) =>
-    // <Route
-    //   exact path='/homepage'
-    //   render={props => <HomePage tabs={tabsProp} key={tabsProp.id} />}
-    // />
-    // )
     // console.log(tabsProp)
 
     return (
@@ -35,13 +69,13 @@ class App extends Component {
             {/* {MyData} */}
             <Route
               exact path='/homepage'
-              render={props => <HomePage tabs={tabsProp} key={tabsProp.id} />}
+              render={props => <HomePage tabs={this.state.tabsProp}/>}
             />
 
             <Route exact path='/about' component={About} />
             <Route exact path='/search-recipes' component={Recipes} />
             <Route exact path='/forum'
-              render={props => <Forum tabs={tabsProp} key={tabsProp.id} />}
+              render={props => <Forum tabs={this.state.tabsProp} />}
             // component={Forum} />
             />
             {/* <Route path='/my-recipes-page' component={MyRecipesPage} />

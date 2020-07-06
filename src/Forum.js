@@ -69,7 +69,11 @@ class Forum extends Component {
 
     renderTitle() {
         const currentTitle = this.props.tabs[this.state.currentTabIndex]
+        // console.log(currentTitle)
+        // console.log(this.props.tabs)
+
         return (
+            currentTitle && 
             <h2 className='content-title'>
                 "{currentTitle.title}"
             </h2>
@@ -82,7 +86,6 @@ class Forum extends Component {
             this.props.tabs.filter(tab => {
                 return tab.content.toLowerCase().includes(this.state.inputValue.toLowerCase())
             })
-        // console.log(this.props.tabs)
         return (
             <div>
                 <Navbar />

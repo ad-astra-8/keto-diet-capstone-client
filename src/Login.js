@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import config from './config'
+import { Link } from 'react-router-dom'
 
 
 class Login extends Component {
@@ -134,6 +135,7 @@ class Login extends Component {
         const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
         return (
             <section className="login-component">
+                <Link to='/forum'>forum</Link>
                 <h1 className="title">Everything Keto</h1>
                 <h2 className="subtitle">Log in to enter Ketosis!</h2>
                 <div className="form-div">

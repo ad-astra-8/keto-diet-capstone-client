@@ -69,20 +69,21 @@ class AddPost extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
-        if (this.state.errorCount > 0) return;
+console.log('submit')
+        // if (this.state.errorCount > 0) return;
 
         const { title, tabName, content } = e.target;
         const note = {
             // note_name: title.value,
-            title: title.value,
-            tab_name: tabName.value,
+            name: title.value,
+            id_folder: parseInt(tabName.value),
             content: content.value,
             // modified: new Date()
         };
+        console.log(note)
         this.setState({ appError: null });
 
-const url = `${config.API_ENDPOINT}`;
+const url = 'http://localhost:8000/api/notes';
 
         fetch(url, {
             method: 'POST',
@@ -100,7 +101,7 @@ const url = `${config.API_ENDPOINT}`;
                 return res.json();
             })
             .then(data => {
-                console.log(data);
+                console.log({data});
                 // title.value = '';
                 // content.value = '';
                 // tabName.value = '';
@@ -132,12 +133,12 @@ const url = `${config.API_ENDPOINT}`;
                             <h3>Add Note</h3>
                         </legend> */}
                         <fieldset className="post-div">
-                        <label htmlFor="name">Post Title</label>
+                        <label htmlFor="title">Post Title</label>
                         <input
                             type="text"
                             className="add-note__name"
-                            name="name"
-                            id="name"
+                            name="title"
+                            id="title"
                             defaultValue=""
                             onChange={this.handleChange}
                         />
@@ -151,11 +152,11 @@ const url = `${config.API_ENDPOINT}`;
                         <select id="tabName" name="tabName" value={this.state.tabName.value} onChange={e => this.updatetabName(e.target.value)}>
                             <option value={this.state.tabName}>Select a folder</option>
                             {this.props.tabs.map((tab, index) => (
-                                <option key={index} value={tab.index}>{tab.tabName}</option>))}
+                                <option key={index} value={index+1}>{tab.tabName}</option>))}
                         </select>
 
                         <textarea id="post-comment" placeholder="leave your comment here" name="content"
-                            id="content"
+                            // id="content"
                             defaultValue=""
                             onChange={this.handleChange}
                         >
@@ -167,7 +168,6 @@ const url = `${config.API_ENDPOINT}`;
                             // disabled={
                             //     this.state.formValid === false
                             // }
-                            onChange={this.handleSubmit}
                         >Submit
                     </button>
 

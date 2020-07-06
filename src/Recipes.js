@@ -110,7 +110,7 @@ class Recipes extends Component {
             <h2>{result.title}</h2>
             <li key={index} className="results-link">
               {/* <Link to={`//${result.sourceUrl}`} target="_blank"> */}
-                <a href={result.sourceUrl} target='_blank'>
+                <a href={result.sourceUrl} target='_blank' rel="noopener noreferrer">
                 <img
                   className="results-link"
                   src={result.image}
