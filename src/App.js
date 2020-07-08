@@ -9,7 +9,7 @@ import HomePage from './HomePage'
 import About from './About'
 import Recipes from './Recipes'
 import Forum from './Forum'
-import tabsProp from './Data';
+// import tabsProp from './Data';
 
 
 
@@ -19,7 +19,7 @@ state={
 }
 
 componentDidMount(){
-  console.warn('*****mounting****')
+  // console.warn('*****mounting****')
   fetch('http://localhost:8000/api/notes')
 
   // if the api returns data ...
@@ -34,7 +34,7 @@ componentDidMount(){
   .then(data => {
 
       //check if there is meaningful data
-      console.log(data);
+      // console.log(data);
       this.setState({
         tabsProp : data
       })

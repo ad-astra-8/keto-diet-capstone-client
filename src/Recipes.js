@@ -106,7 +106,7 @@ class Recipes extends Component {
     const displayResults = this.state.loading
       ? "loading the meals..."
       : this.state.recipe.map((result, index) => (
-          <div>
+          <div  key={index}>
             <h2>{result.title}</h2>
             <li key={index} className="results-link">
               {/* <Link to={`//${result.sourceUrl}`} target="_blank"> */}

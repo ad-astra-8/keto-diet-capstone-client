@@ -6,21 +6,17 @@ import React, { Component } from 'react'
 // import Forum from './Forum'
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom';
+
+
 class HomePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // loading: false,
             results: [],
         }
     }
 
     render() {
-        // const myData = Data.map((tabsProp, key) =>
-        //     <Forum tabsProp={tabsProp} key={tabsProp.id} />)
-        // console.log(myData);
-
-
         console.log(this.props.tabs)
 
         return (
@@ -40,12 +36,8 @@ class HomePage extends Component {
                     <div className="icon-container">
                         <Link to="about"><img src="/images/about-image.jpg" alt="about-icon" /></Link>
                         <Link to="search-recipes"><img src="/images/recipe-image.jpg" alt="recipe-icon" /></Link>
-                        <Link to="forum" tabs={this.props.tabs} key={this.props.tabs.id}><img src="/images/forum-image2.jpg" alt="forum-icon" /></Link>
+                        <Link to="forum" tabs={this.props.tabs}><img src="/images/forum-image2.jpg" alt="forum-icon" /></Link>
                     </div>
-
-                    {/* <About /> */}
-                    {/* <Recipes />*/}
-                    {/* <Forum tabs={tabsProp} />  */}
                 </section>
             </div>
         )
