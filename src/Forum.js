@@ -131,24 +131,24 @@ class Forum extends Component {
 
     // let listofcollections = 'Unknown';
 
-    if(this.state.folderList.length !== 0 ){
-      listofcollections = this.state.folderList.map((collection, key) => {
-        const linkString = `/folderlist/show/${collection.id}`
+    // if(this.state.folderList.length !== 0 ){
+    //   listofcollections = this.state.folderList.map((collection, key) => {
+    //     const linkString = `/folderlist/show/${collection.id}`
 
-    return (
-      <div className="list" key={key}>
-        <Link to={linkString}>
-          <h3>{collection.collection_name}</h3>
-        </Link>
-        {/* <Link to={`/comment/add/${collection.id}`}>Add a comment</Link> */}
-        {/* <form onSubmit={this.deleteCollection} className="deleteForm">
-          <input type="hidden" name='collectionId' defaultValue={collection.id}></input>
-          <button type="submit" className="deleteButton">Delete Collection</button>
-        </form> */}
-      </div>
-      )
-    });
-    }
+    // return (
+    //   <div className="list" key={key}>
+    //     {/* <Link to={linkString}>
+    //       <h3>{collection.collection_name}</h3>
+    //     </Link> */}
+    //     {/* <Link to={`/comment/add/${collection.id}`}>Add a comment</Link> */}
+    //     {/* <form onSubmit={this.deleteCollection} className="deleteForm">
+    //       <input type="hidden" name='collectionId' defaultValue={collection.id}></input>
+    //       <button type="submit" className="deleteButton">Delete Collection</button>
+    //     </form> */}
+    //   </div>
+    //   )
+    // });
+    // }
     return (
       <div>
         <Navbar />
