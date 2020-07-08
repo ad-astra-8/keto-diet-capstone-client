@@ -48,7 +48,7 @@ class AddPost extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit");
+    // console.log("submit");
 
     const { name, tabName, content } = e.target;
     const note = {
@@ -79,6 +79,8 @@ class AddPost extends Component {
       })
       .then((data) => {
         console.log(data);
+        this.props.updateNote(data)
+
         // this.state.title.value = "";
         // this.state.content.value = "";
         // tabName.value = '';
@@ -93,8 +95,8 @@ class AddPost extends Component {
   };
 
   render() {
-    console.log(this.props.tabs)
-console.log(this.state.tabName)
+// console.log(this.props.tabs)
+// console.log(this.state.tabName)
     return (
       <div>
         <section className="addPost">
@@ -120,9 +122,9 @@ console.log(this.state.tabName)
                 onChange={(e) => this.updatetabName(e.target.value)}
               >
                 <option value={this.state.tabName}>Select a folder</option>
-                {this.props.tabs.map((tab, index) => (
-                  <option key={index} value={tab.id_folder}>
-                    {tab.id_folder}
+                {Object.entries(this.props.tabs).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {value}
                   </option>
                 ))}
               </select>

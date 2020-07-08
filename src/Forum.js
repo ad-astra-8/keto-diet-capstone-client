@@ -13,6 +13,7 @@ class Forum extends Component {
       currentTabIndex: "",
       inputValue: "",
       folderList: [],
+      tabs: {1: 'Diet Routine',2: 'Workout', 3: 'Recipes'}
     };
   }
 
@@ -71,9 +72,8 @@ class Forum extends Component {
 
   renderButtons() {
     // console.log(this.props);
-    const currentButton = this.props.tabs.map((tab, id) => {
-      
-      if (tab.id === tab.id_folder) {
+    const currentButton = Object.entries(this.state.tabs).map(([key, value]) => {
+      let id = parseInt(key)
 
         return (
       <button
@@ -82,11 +82,9 @@ class Forum extends Component {
         type="button"
         onClick={() => this.handleTabClick(id)}
       >
-        {/* {index} */}
-        {tab.id_folder}
+        {value}
       </button>
       );
-    }
   });
   return currentButton;
 }
@@ -122,12 +120,16 @@ class Forum extends Component {
     console.log(this.state.folderList);
     // console.log(this.props.tabs)
     const filteredForum = this.props.tabs.filter((tab) => {
-      return tab.content
-        .toLowerCase()
-        .includes(this.state.inputValue.toLowerCase());
+      let content =  tab.content
+      .toLowerCase()
+      .includes(this.state.inputValue.toLowerCase());
+      let title =  tab.name
+      .toLowerCase()
+      .includes(this.state.inputValue.toLowerCase());
+      return content || title
     });
 
-    let listofcollections = 'Unknown';
+    // let listofcollections = 'Unknown';
 
     if(this.state.folderList.length !== 0 ){
       listofcollections = this.state.folderList.map((collection, key) => {
@@ -193,7 +195,7 @@ class Forum extends Component {
                         <p className="error-message">error: please select a category</p> */}
           </form>
 
-          <AddPost tabs={this.props.tabs} />
+          <AddPost tabs={this.state.tabs} updateNote={this.props.updateNote}/>
         </section>
       </div>
     );

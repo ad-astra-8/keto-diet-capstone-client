@@ -48,11 +48,12 @@ componentDidMount(){
 }
 
 
-
-
-
-
-
+  updateNote = (note) => {
+    console.log(note);
+    this.setState({
+      tabsProp : [...this.state.tabsProp, note]
+    })
+  }
 
   render() {
     // console.log(tabsProp)
@@ -69,13 +70,13 @@ componentDidMount(){
             {/* {MyData} */}
             <Route
               exact path='/homepage'
-              render={props => <HomePage tabs={this.state.tabsProp}/>}
+              render={props => <HomePage tabs={this.state.tabsProp} />}
             />
 
             <Route exact path='/about' component={About} />
             <Route exact path='/search-recipes' component={Recipes} />
             <Route exact path='/forum'
-              render={props => <Forum tabs={this.state.tabsProp} />}
+              render={props => <Forum tabs={this.state.tabsProp} updateNote={this.updateNote}/>}
             // component={Forum} />
             />
             {/* <Route path='/my-recipes-page' component={MyRecipesPage} />
