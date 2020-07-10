@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Navbar from './Navbar'
+import Footer from "./Footer";
 // import config from './config'
 // import ValidationError from './ValidationError';
 
@@ -56,7 +56,7 @@ class AddPost extends Component {
       name: name.value,
       id_folder: parseInt(tabName.value),
       content: content.value,
-    //   modified: new Date(),
+      //   modified: new Date(),
     };
     console.log(note);
 
@@ -79,14 +79,7 @@ class AddPost extends Component {
       })
       .then((data) => {
         console.log(data);
-        this.props.updateNote(data)
-
-        // this.state.title.value = "";
-        // this.state.content.value = "";
-        // tabName.value = '';
-        // this.context.addNote(data);
-        // this.setState({ data });
-        // this.props.history.push('/', data);
+        this.props.updateNote(data);
       })
 
       .catch((error) => {
@@ -95,40 +88,41 @@ class AddPost extends Component {
   };
 
   render() {
-// console.log(this.props.tabs)
-// console.log(this.state.tabName)
+    // console.log(this.props.tabs)
+    // console.log(this.state.tabName)
     return (
       <div>
         <section className="addPost">
+        <p className='intro'>Select a topic to discuss and share your experience!</p>
           <form className="add-note" onSubmit={this.handleSubmit}>
-            <fieldset className="post-div">
+            <fieldset className="post-title">
               <label htmlFor="title">Give a title for your post</label>
               <input
                 type="text"
                 name="name"
                 id="name"
                 defaultValue=""
-                onChange={e => this.updateName(e.target.value)}
+                onChange={(e) => this.updateName(e.target.value)}
               />
             </fieldset>
 
             <fieldset className="post-div">
-              <label htmlFor="post-comment">Post your comment about:</label>
-
-              <select
-                id="tabName"
-                name="tabName"
-                value={this.state.tabName.value}
-                onChange={(e) => this.updatetabName(e.target.value)}
-              >
-                <option value={this.state.tabName}>Select a folder</option>
-                {Object.entries(this.props.tabs).map(([key, value]) => (
-                  <option key={key} value={key}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-
+              <label htmlFor="post-comment">
+                Post your comment about:
+                <select
+                  id="tabName"
+                  name="tabName"
+                  value={this.state.tabName.value}
+                  onChange={(e) => this.updatetabName(e.target.value)}
+                >
+                  <option value={this.state.tabName}>Select a folder</option>
+                  {Object.entries(this.props.tabs).map(([key, value]) => (
+                    <option key={key} value={key}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
+              </label>
               <textarea
                 id="post-comment"
                 placeholder="leave your comment here"
@@ -143,7 +137,10 @@ class AddPost extends Component {
             </button>
           </form>
         </section>
+                  <Footer />
+
       </div>
+      
     );
   }
 }

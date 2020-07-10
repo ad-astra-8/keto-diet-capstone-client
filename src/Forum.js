@@ -13,7 +13,7 @@ class Forum extends Component {
       currentTabIndex: "",
       inputValue: "",
       folderList: [],
-      tabs: {1: 'Diet Routine',2: 'Workout', 3: 'Recipes'}
+      tabs: { 1: "Diet Routine", 2: "Workout", 3: "Recipes" },
     };
   }
 
@@ -66,38 +66,40 @@ class Forum extends Component {
   // }
 
   handleTabClick = (id_folder) => {
-    console.log('button clicked!', { id_folder })
+    console.log("button clicked!", { id_folder });
     this.setState({ currentTabIndex: id_folder });
   };
 
   renderButtons() {
     // console.log(this.props);
-    const currentButton = Object.entries(this.state.tabs).map(([key, value]) => {
-      let id = parseInt(key)
+    const currentButton = Object.entries(this.state.tabs).map(
+      ([key, value]) => {
+        let id = parseInt(key);
 
         return (
-      <button
-        className="tab"
-        key={id}
-        type="button"
-        onClick={() => this.handleTabClick(id)}
-      >
-        {value}
-      </button>
-      );
-  });
-  return currentButton;
-}
+          <button
+            className="tab"
+            key={id}
+            type="button"
+            onClick={() => this.handleTabClick(id)}
+          >
+            {value}
+          </button>
+        );
+      }
+    );
+    return currentButton;
+  }
 
   renderContent() {
     const currentTab = this.props.tabs.map((tab, index) => {
       if (this.state.currentTabIndex === tab.id_folder) {
         console.log(tab);
-        console.log(tab.id_folder)
+        console.log(tab.id_folder);
 
         return (
           <div key={index}>
-            <h2  className="content-title">{tab.name}</h2>
+            <h2 className="content-title">{tab.name}</h2>
             <div className="content">{tab.content}</div>
           </div>
         );
@@ -111,22 +113,20 @@ class Forum extends Component {
     // console.log(currentTitle)
     // console.log(this.props.tabs)
 
-    return (
-      currentTitle && <h2>{currentTitle.name}</h2>
-    );
+    return currentTitle && <h2>{currentTitle.name}</h2>;
   }
 
   render() {
     console.log(this.state.folderList);
     // console.log(this.props.tabs)
     const filteredForum = this.props.tabs.filter((tab) => {
-      let content =  tab.content
-      .toLowerCase()
-      .includes(this.state.inputValue.toLowerCase());
-      let title =  tab.name
-      .toLowerCase()
-      .includes(this.state.inputValue.toLowerCase());
-      return content || title
+      let content = tab.content
+        .toLowerCase()
+        .includes(this.state.inputValue.toLowerCase());
+      let title = tab.name
+        .toLowerCase()
+        .includes(this.state.inputValue.toLowerCase());
+      return content || title;
     });
 
     // let listofcollections = 'Unknown';
@@ -154,10 +154,11 @@ class Forum extends Component {
         <Navbar />
         <section className="forum">
           <h2 className="section-title">Forum</h2>
+          <p className='intro'>Filter your search and check your results below!</p>
           <form className="forum-form">
             <fieldset className="search-div">
               <label className="search-label" htmlFor="search-term">
-                Search for a post with keyword:
+                Enter a keyword of your choice: 
               </label>
               <input
                 className="search-input"
@@ -180,6 +181,8 @@ class Forum extends Component {
             </div>
 
             <div className="tabsContainer">
+            <p className='intro'>Click on a tab and search posts per topics!</p>
+
               {this.renderButtons()}
               {/* {listofcollections} */}
               {/* {this.renderTitle()} */}
@@ -195,7 +198,7 @@ class Forum extends Component {
                         <p className="error-message">error: please select a category</p> */}
           </form>
 
-          <AddPost tabs={this.state.tabs} updateNote={this.props.updateNote}/>
+          <AddPost tabs={this.state.tabs} updateNote={this.props.updateNote} />
         </section>
       </div>
     );

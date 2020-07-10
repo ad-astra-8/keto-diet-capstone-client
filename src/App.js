@@ -9,6 +9,7 @@ import HomePage from './HomePage'
 import About from './About'
 import Recipes from './Recipes'
 import Forum from './Forum'
+import Footer from './Footer'
 // import tabsProp from './Data';
 
 
@@ -82,7 +83,6 @@ componentDidMount(){
             {/* <Route path='/my-recipes-page' component={MyRecipesPage} />
             <Route path='/my-posts-page' component={MyPostsPage} /> */}
             {/* <Route path='/account' component={AccountPage} /> */}
-
           </Switch>
           {/* <AccountPage /> */}
           {/* <MyRecipesPage />

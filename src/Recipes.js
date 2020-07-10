@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import config from "./config";
 import Navbar from "./Navbar";
 // import { Link } from "react-router-dom";
+import Footer from './Footer'
 
 class Recipes extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class Recipes extends Component {
       data[value[0]] = value[1];
     }
     console.log(data.query);
+    
     let { searchTerm } = data;
     if (searchTerm === "") {
       this.setState({
@@ -58,7 +60,8 @@ class Recipes extends Component {
       "&diet=ketogenic&number=4&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef";
     console.log(url);
     console.log(queryString)
-
+    console.log(data['query'])    
+    
     const options = {
       method: "GET",
       header: {
@@ -106,7 +109,7 @@ class Recipes extends Component {
     const displayResults = this.state.loading
       ? "loading the meals..."
       : this.state.recipe.map((result, index) => (
-          <div  key={index}>
+          <div className='div-results'  key={index}>
             <h2>{result.title}</h2>
             <li key={index} className="results-link">
               {/* <Link to={`//${result.sourceUrl}`} target="_blank"> */}
@@ -127,9 +130,10 @@ class Recipes extends Component {
         <Navbar />
         <section className="recipes" onSubmit={this.handleSubmit}>
           <h2 className="section-title">Keto Recipes</h2>
+          <p className='intro'> Search for a keto recipe based on a keyword and check your results below!</p>
           <form className="search-recipe-form">
             <label htmlFor="search-term">
-              Search for a keto recipe with keyword:
+              Enter an ingredient of your choice:
             </label>
             {errorMessage}
             <input
@@ -142,12 +146,10 @@ class Recipes extends Component {
             <button type="submit" id="submit-searchTerm">
               Search
             </button>
-            <div>
-              <h2>Check out your results below:</h2>
               <ul className="results-list">{displayResults}</ul>
-            </div>
           </form>
         </section>
+        <Footer />
       </div>
     );
   }

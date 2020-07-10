@@ -88,10 +88,28 @@ The app's functionality includes:
 * User can sort entries by: meal (eg. dinner, dessert, snack, breakfast)
 
 ## Business Objects (back-end structure)
-* User (database table)
-    * Username (email validation)
-    * Password (at least 8 chars, at least one alpha and a special character validation)
+* Users (database table)
+    * id  
+    * email (email validation)
+    * password (at least one number, one lowercase and one uppercase letter at least eight characters that are letters, numbers or the underscore)
 
+* Forum folders
+     * id 
+     * title
+
+* Forum 
+    * id 
+    * user_id
+    * forum_folder_id
+    * title
+    * description 
+
+* Recipes
+    * id
+    * user_id
+    * title
+    * image
+    * source
 
 ## Components Structure
 * __Index.js__ (stateless)

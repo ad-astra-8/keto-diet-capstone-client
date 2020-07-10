@@ -34,7 +34,8 @@ body {
   height: 500px;
   position: relative; */
   /* opacity: 0.5; */  
-  background-image: url('/images/app-background.jpg');
+  /* background-image: url('/images/app-background.jpg'); */
+  background-color: whitesmoke;
   background-position: center center;
   background-repeat: repeat;
   background-attachment: scroll;
@@ -42,7 +43,7 @@ body {
   width: 100%; */
   display: block;
   position: relative;
-  padding-top: 20px;
+  padding-top: 0;
   margin-top: 0;
   text-align: center;
   background-size: cover;
@@ -53,8 +54,9 @@ body {
   }
   
 section {
-  padding: 40px 20px 40px 20px;
+  padding: 30px 20px 40px 20px;
   /* border-bottom: solid black 1px; */
+  height: 700px;
 }
 
 h1 {
@@ -73,13 +75,16 @@ h1 {
 
 button {
   margin: 20px;
-  padding: 8px;
-  /* background-color: #4CAF50; */
+  padding: 10px;
   background-color: rgb(103, 170, 94);
   text-decoration: none;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+button:hover {
+  color:white;
 }
 
 label {
@@ -89,8 +94,7 @@ label {
 
 input {
   padding: 5px;
-  margin: 5px 0 12px 0; 
-  /* width: 10%; */
+  margin: 5px 0 12px 10px; 
   border: solid rgb(32, 31, 31) 0.5px;
   border-radius: 3px;
 }
@@ -101,6 +105,11 @@ input::placeholder {
 
 textarea {
   border: solid rgb(32, 31, 31) 0.5px;
+  border-radius: 3px;
+  height : 150px;
+  width: 276px;
+  padding: 5px;
+
 }
 /* -------------------------------------
 Header styles (Main Module)
@@ -110,6 +119,13 @@ Header styles (Main Module)
   float: left;
   }
 
+  header {
+    padding-bottom: 60px;
+  }
+
+ .post-title {
+text-align: left;
+  }
 
 /* -------------------------------------
 Content styles (Main Module)
@@ -142,7 +158,10 @@ Content styles (Main Module)
   width: 100%;
   text-align: right;
   margin-bottom: 60px;
-  background-color: #A88B6B;
+  background-color: #F1C92D;
+  background-color: #92B93D;
+  background-color: #F49624;
+  background-color: #2778AF;
   height: 40px;
   display: inline-flex;
   align-items: center;
@@ -153,13 +172,14 @@ Content styles (Main Module)
 .nav-link {
   padding: 15px;
   margin: 0;
-  color: #fff;
+  color: black;
   font-size: 14px;
 }
 
 a:hover {
   /* background-color: rgb(34, 33, 33); */
-  color: #f1cc50;
+  color: #fff;
+  text-shadow: #fff;
 }
 
 .nav-link li a {
@@ -172,20 +192,16 @@ a:hover {
  
  /* Style the tab */
  .tab {
-  width: 100px;
-  margin: 0;
-  /* border-radius: 1px; */
-  border: solid 0.5px black;
-  overflow: hidden;
-  /* background-color: #A88B6B; */
-  background-color: #fff;
+  margin: 40px;
+  padding: 40px;
+
 }
+
 
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
   float: left;
-  /* border: none; */
   outline: none;
   cursor: pointer;
   transition: 0.3s;
@@ -194,8 +210,8 @@ a:hover {
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+.tab:hover {
+  color: white;
   /* rgb(104, 21, 21) */
 }
 
@@ -224,13 +240,27 @@ h2 {
   padding: 20px;
 }
 
+.icon-container {
+  padding-top: 20px;
+}
+
+
 .icon-container img {
-  width: 33%;
-  height: 190px;
+  width: 32%;
+  height: 200px;
   /* float: right; */
-  padding: 20px;
-  margin-bottom: 20px; 
-  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 3px;
+  border: solid white 2px;
+  }
+
+.icon-container img:hover {
+  background-color : #fff;
 
 }
 
@@ -239,6 +269,7 @@ h2 {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  font-size: 20px;
 }
 
 p.lorem {
@@ -249,15 +280,12 @@ p.lorem {
 .results-list {
   list-style-type: none;
     margin: 0;
-    /* padding: 60px, 20px, 60px, 20px; */
     overflow: hidden;
-    float: right;
-    /* width: 100%; */
-    text-align: center;
     margin-bottom: 60px;
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
     background-color: #fff;
+    flex-flow: wrap;
+    justify-content: center;
 
 }
 
@@ -274,6 +302,14 @@ p.lorem {
 
 }
 
+.recipes {
+  /* height: 1000px; */
+}
+
+.results-link {
+  padding: 10px 20px ;
+}
+
 p {
   text-align: center;
 }
@@ -286,12 +322,9 @@ p {
 
 select {
   margin: 10px;
+  border: black solid 0.5px;
+  border-radius: 3px;
   
-}
-
-textarea {
-  height : 150px;
-  width: 276px;
 }
 
 #comment-submit-button {
@@ -299,11 +332,11 @@ textarea {
 }
 
 
-ol {
+/* ol {
   display: inline-block;
-  list-style-type: circle;
+  list-style-type: circle; */
 
-}
+/* } */
 
 .favorite {
   padding: 8px;
@@ -320,10 +353,11 @@ ol {
 }
 
 .tabsContainer {
-  /* background-color: non; */
-  /* border: solid 0.5px #ddd; */
   padding: 20px;
-  margin-top: 60px;
+  padding-top: 40px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-top: solid black 0.5px;
 }
 
 .content {
@@ -336,48 +370,58 @@ ol {
   background-color:rgb(255, 255, 255, 0.9);
   border: solid 0.5px #ddd;
   padding: 40px;
-
 }
+
 h3 {
   padding: 20px;
 }
 
 .section-title {
-  color:rgb(103, 170, 94);
+  color: #2778AF;
   font-size: 24px;
-  background-color: #fff;
-  display: inline-block;
   padding: 5px 20px 5px 20px;
   margin-top: 0;
-  margin-bottom: 60px;
-  position: absolute;
-  /* top: 10px; */
+  margin-bottom: 40px;
+  text-align: left;
 
 }
 .search-div {
  display: inline-block;
  text-align: left;
  width: 100%;
- background-color: rgb(255, 255, 255, 0.9);
 }
  
 .post-div {
-    display: inline-block;
+    display: flex;
     text-align: left;
     width: 100%;
-    background-color: rgb(255, 255, 255, 0.9);
+    /* background-color: rgb(255, 255, 255, 0.9); */
+    margin: 20px 0;
    }
    
+   .intro {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: left;
+  }
+
 /* -------------------------------------
 Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
 .footer {
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   line-height: 5px;
+  background-color: #2778AF;
 }
+
+.addPost {
+    border-top: black solid 0.5px;
+  }
+
 
 /* -------------------------------------
 place all the desktop styles above this line
@@ -390,41 +434,41 @@ place all the mobile tables styles below this line
 /*large desktop*/
 @media only screen and (max-width: 1600px) {
   body {
-      color: yellow;
+      /* color: yellow; */
   }
 }
 
 /*iPad lanscape / small laptop*/
 @media only screen and (max-width: 1024px) {
   body {
-      color: blue;
+      /* color: blue; */
   }
 }
 
 /*iPad potrait*/
 @media only screen and (max-width: 768px) {
   body {
-      color: black;
+      /* color: black; */
   }
 }
 
 /*Android landscape*/
 @media only screen and (max-width: 640px) {
   body {
-      color: black;
+      /* color: black; */
   }
 }
 
 /*iPhone landscape*/
 @media only screen and (max-width: 480px) {
   body {
-      color: green;
+      /* color: green; */
   }
 }
 
 /*iPhone portrait*/
 @media only screen and (max-width: 320px) {
   body {
-      color: purple;
+      /* color: purple; */
   }
 }
