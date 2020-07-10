@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -31,16 +30,17 @@ function About() {
         <p className='text'>A ketogenic diet may help you lose more weight in the first 3 to 6 months than some other diets. 
         This may be because it takes more calories to change fat into energy than it does to change carbs into energy. 
         It’s also possible that a high-fat, high-protein diet satisfies you more, so you eat less, but that hasn’t been proved yet.</p>
-        
-        <p className="intro">You can find links to to other sources below: </p>
-        <Link to=""></Link>
-        <Link to=""></Link>
-        <Link to=""></Link>
-        <Link to=""></Link>
-        <Link to=""></Link>
-        <Link to=""></Link>
-        <Link to=""></Link>
-        <Link to=""></Link>
+       
+        <div className='sources-div'>
+        <p className="intro">You can find links to other sources below: </p>
+        <ul className='sources-ul'>
+        <li className='sources-li'><a href="https://alldayidreamaboutfood.com/" target='_blank' rel="noopener noreferrer">All Day I Dream About Food</a></li>
+        <li className='sources-li'><a href="https://jenniferbanz.com/" target='_blank' rel="noopener noreferrer">Low Carb with Jennifer</a></li>
+        <li className='sources-li'><a href="https://www.yummly.com/recipes?q=keto&taste-pref-appended=true" target='_blank' rel="noopener noreferrer">Yummly</a></li>
+        <li className='sources-li'><a href="https://www.pinterest.com/search/pins/?q=keto&rs=typed&term_meta[]=keto%7Ctyped" target='_blank' rel="noopener noreferrer">Pinterest (keto section)</a></li>
+        <li className='sources-li'><a href="https://nobunplease.com/" target='_blank' rel="noopener noreferrer">No Bun Please</a></li>
+        </ul>
+        </div>
       </section>
     </div>
   );
