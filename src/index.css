@@ -383,7 +383,7 @@ h3 {
   margin-top: 0;
   margin-bottom: 40px;
   text-align: left;
-
+  text-decoration: overline;
 }
 .search-div {
  display: inline-block;
@@ -404,6 +404,7 @@ h3 {
     margin-top: 20px;
     font-size: 20px;
     text-align: left;
+    line-height: 1.3;
   }
 
 /* -------------------------------------

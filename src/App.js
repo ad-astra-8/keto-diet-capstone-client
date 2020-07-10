@@ -88,6 +88,7 @@ componentDidMount(){
           {/* <MyRecipesPage />
           <MyPostsPage /> */}
         </BrowserRouter>
+        <Footer />
       </main>
     )
   }
