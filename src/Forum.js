@@ -13,7 +13,7 @@ class Forum extends Component {
       currentTabIndex: "",
       inputValue: "",
       folderList: [],
-      tabs: { 1: "Diet Routine", 2: "Workout", 3: "Recipes" },
+      tabs: { 1: "Routine", 2: "Workout", 3: "Recipes" },
     };
   }
 

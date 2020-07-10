@@ -9,7 +9,6 @@ import HomePage from './HomePage'
 import About from './About'
 import Recipes from './Recipes'
 import Forum from './Forum'
-import Footer from './Footer'
 // import tabsProp from './Data';
 
 
@@ -88,7 +87,6 @@ componentDidMount(){
           {/* <MyRecipesPage />
           <MyPostsPage /> */}
         </BrowserRouter>
-        <Footer />
       </main>
     )
   }

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import config from "./config";
 import Navbar from "./Navbar";
 // import { Link } from "react-router-dom";
-import Footer from './Footer'
 
 class Recipes extends Component {
   constructor(props) {
@@ -110,8 +109,8 @@ class Recipes extends Component {
       ? "loading the meals..."
       : this.state.recipe.map((result, index) => (
           <div className='div-results'  key={index}>
-            <h2>{result.title}</h2>
-            <li key={index} className="results-link">
+            <h2 className='result-title'>{result.title}</h2>
+            <li key={index} className="results-li">
               {/* <Link to={`//${result.sourceUrl}`} target="_blank"> */}
                 <a href={result.sourceUrl} target='_blank' rel="noopener noreferrer">
                 <img
@@ -149,7 +148,6 @@ class Recipes extends Component {
               <ul className="results-list">{displayResults}</ul>
           </form>
         </section>
-        <Footer />
       </div>
     );
   }

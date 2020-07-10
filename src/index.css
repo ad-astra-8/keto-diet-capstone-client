@@ -240,23 +240,27 @@ h2 {
   padding: 20px;
 }
 
-.icon-container {
-  padding-top: 20px;
+.icon-container img {
+  margin-top: 40px;
 }
 
+.icon-container {
+  padding-top: 20px;
+  /* width: 100%; */
+  display: inline-flex;
+  flex-direction: row;
+}
 
 .icon-container img {
-  width: 32%;
   height: 200px;
-  /* float: right; */
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
   border-radius: 3px;
-  border: solid white 2px;
+  border: solid white 2px;  
   }
 
 .icon-container img:hover {
@@ -268,7 +272,7 @@ h2 {
   padding: 20px;
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  /* width: 100%; */
   font-size: 20px;
 }
 
@@ -283,7 +287,7 @@ p.lorem {
     overflow: hidden;
     margin-bottom: 60px;
     display: flex;
-    background-color: #fff;
+    /* background-color: #fff; */
     flex-flow: wrap;
     justify-content: center;
 
@@ -292,22 +296,31 @@ p.lorem {
 .results-list li {
   display: inline-block;
   /* padding: 40px, 20px, 40px, 20px; */
-  background-color: #fff;
+  /* background-color: #fff; */
 
 }
 
 
 .results-list a {
-  background-color: rgb(255, 255, 255, 0.9);
+  /* background-color: rgb(255, 255, 255, 0.9); */
 
 }
 
-.recipes {
-  /* height: 1000px; */
+.result-title {
+  padding-bottom: 10px;
 }
 
 .results-link {
-  padding: 10px 20px ;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 20px;
+  border-radius: 3px;
+  border: solid white 2px;
+}
+
+
+.results-link:hover {
+  background-color: white ;
 }
 
 p {
@@ -315,7 +328,7 @@ p {
 }
 
 
-#search-term {
+.search-input {
   width: 30%;
 }
 
@@ -412,12 +425,12 @@ Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
-.footer {
+/* .footer {
   padding: 20px;
   text-align: center;
   line-height: 5px;
   background-color: #2778AF;
-}
+} */
 
 .addPost {
     border-top: black solid 0.5px;
@@ -437,6 +450,17 @@ place all the mobile tables styles below this line
   body {
       /* color: yellow; */
   }
+  .icon-container {
+    padding-top: 0;
+    display: inline-flex;
+    flex-direction: row;
+  }  
+
+    /* .icon-title {
+    display: none;
+  } */
+
+
 }
 
 /*iPad lanscape / small laptop*/
@@ -444,19 +468,53 @@ place all the mobile tables styles below this line
   body {
       /* color: blue; */
   }
+  .icon-container img {
+    margin-top: 40px;
+    width: 200px;
+
+  }
+
+  .icon-container {
+    padding-top: 0;
+    display: inline-flex;
+    flex-direction: row;    
+  }  
+
 }
 
 /*iPad potrait*/
 @media only screen and (max-width: 768px) {
   body {
       /* color: black; */
+  }  
+
+  .icon-container img {
+    margin-top: 40px;
+    width: 175px;
   }
+
+  .icon-container {
+    padding-top: 0;
+    display: inline-flex;
+    flex-direction: row;    
+  }  
 }
 
 /*Android landscape*/
 @media only screen and (max-width: 640px) {
   body {
       /* color: black; */
+  }
+
+  .icon-container {
+    padding-top: 0;
+    display: inline-flex;
+    flex-direction: column;
+  }  
+
+  .icon-container img {
+    width: 50%;
+    margin-top: 0;
   }
 }
 
@@ -465,11 +523,73 @@ place all the mobile tables styles below this line
   body {
       /* color: green; */
   }
+
+  .icon-container img {
+    width: 60%;  
+    margin-top: 0;
+  }
+
+  .icon-title {
+  padding-top: 0;
+  }
+
+  .results-link {
+    width: 250px;
+    padding: 10px;
+  }
 }
 
 /*iPhone portrait*/
 @media only screen and (max-width: 320px) {
   body {
       /* color: purple; */
+  }
+  
+  .nav-link {
+    padding: 3px;
+  }
+
+  .icon-container {
+  padding-top: 0;
+  display: inline-flex;
+  flex-direction: column;
+  }  
+
+  .icon-container img{
+    margin-top: 0;
+  }  
+
+  input {
+    width: -webkit-fill-available;
+  }
+
+  .results-link {
+    width: 160px;
+    padding: 8px;
+  }
+
+  .search-input {
+    min-width: -webkit-fill-available;
+  }
+
+  .tab {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  textarea {
+    width: 160px;
+  }
+
+  #name {
+    width: 150px;
+  }
+
+  .post-title {
+    text-align: center;
+  }
+
+  .post-div {
+    text-align: center;
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "./Footer";
 // import config from './config'
 // import ValidationError from './ValidationError';
 
@@ -137,7 +136,6 @@ class AddPost extends Component {
             </button>
           </form>
         </section>
-                  <Footer />
 
       </div>
       
