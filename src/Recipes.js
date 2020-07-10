@@ -142,7 +142,7 @@ class Recipes extends Component {
               placeholder="chocolate"
               required
             />
-            <button type="submit" id="submit-searchTerm">
+            <button type="submit" id="submit-btn">
               Search
             </button>
               <ul className="results-list">{displayResults}</ul>

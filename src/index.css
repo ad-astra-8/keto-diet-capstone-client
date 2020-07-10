@@ -459,7 +459,10 @@ h3 {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-  
+  }
+
+  #submit-btn {
+    padding: 12px;
   }
 /* -------------------------------------
 Footer styles (Main Module)
@@ -539,6 +542,7 @@ place all the mobile tables styles below this line
     display: inline-flex;
     flex-direction: row;    
   }  
+
 }
 
 /*Android landscape*/
@@ -557,6 +561,11 @@ place all the mobile tables styles below this line
     width: 50%;
     margin-top: 0;
   }
+
+  #name {
+    width: 200px;
+  }
+
 }
 
 /*iPhone landscape*/
@@ -577,6 +586,15 @@ place all the mobile tables styles below this line
   .results-link {
     width: 250px;
     padding: 10px;
+  }
+
+  #name {
+    /* width: 160px; */
+    margin-left: 0;
+  }
+
+  #search-term {
+    margin-left: 0;
   }
 }
 
@@ -602,6 +620,7 @@ place all the mobile tables styles below this line
 
   input {
     width: -webkit-fill-available;
+    margin-left: 0;
   }
 
   .results-link {
@@ -623,14 +642,27 @@ place all the mobile tables styles below this line
   }
 
   #name {
-    width: 150px;
+    width: 160px;
+    margin-left: 0;;
   }
 
   .post-title {
-    text-align: center;
+    text-align: left;
   }
 
   .post-div {
     text-align: center;
+  }
+
+  .tab {
+margin-right: 10px;
+  }
+
+  .addPost {
+    text-align: left;
+  }
+
+  #submit-btn {
+    margin: 0;
   }
 }
