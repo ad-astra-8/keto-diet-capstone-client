@@ -93,7 +93,7 @@ class Forum extends Component {
       if (this.state.currentTabIndex === tab.id_folder) {
         console.log(tab);
         console.log(tab.id_folder);
-
+      
         return (
           <div key={index}>
             <h2 className="content-title">{tab.name}</h2>
@@ -118,8 +118,8 @@ class Forum extends Component {
 
   render() {
     console.log(this.state.folderList);
-    // console.log(this.props.tabs)
-    const filteredForum = this.props.tabs.filter((tab) => {
+    console.log(this.props.tabs)
+    const filteredForum = this.state.folderList.filter((tab) => {
       let content = tab.content
         .toLowerCase()
         .includes(this.state.inputValue.toLowerCase());
@@ -152,8 +152,8 @@ class Forum extends Component {
             <div className="postResults">
               <h2>Results matching your specific search:</h2>
               {this.state.inputValue &&
-                filteredForum.map(({ name, content }) => (
-                  <div className="searchTerm-results">
+                filteredForum.map(({ name, content }, index) => (
+                  <div key={index} className="searchTerm-results">
                     <h2>{name}</h2>
                     <p>{content}</p>
                   </div>
@@ -165,7 +165,7 @@ class Forum extends Component {
               <p className='intro'>Click on a tab and search posts per topics!</p>
 
               {this.renderButtons()}
-              {!!this.props.tabs.length && this.renderContent()}
+              {!!this.state.folderList.length && this.renderContent()}
 
             </div>
 
