@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import config from "./config";
 import Navbar from "./Navbar";
-// import { Link } from "react-router-dom";
 
 class Recipes extends Component {
   constructor(props) {
@@ -111,7 +110,6 @@ class Recipes extends Component {
           <div className='div-results'  key={index}>
             <h2 className='result-title'>{result.title}</h2>
             <li key={index} className="results-li">
-              {/* <Link to={`//${result.sourceUrl}`} target="_blank"> */}
                 <a href={result.sourceUrl} target='_blank' rel="noopener noreferrer">
                 <img
                   className="results-link"
@@ -119,7 +117,6 @@ class Recipes extends Component {
                   alt="meal-preview"
                 />
                 </a>
-                {/*</Link> */}
               <p>{result.sourceName}</p>
               <button type="submit" id="fav-btn">add fav<i class="fa fa-heart" aria-hidden="true"></i></button>
             </li>

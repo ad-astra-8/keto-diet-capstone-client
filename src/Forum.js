@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./Navbar";
 import AddPost from "./AddPost";
 // import config from "./config";
-import { Link } from "react-router-dom";
 
 class Forum extends Component {
   constructor(props) {
@@ -47,8 +46,7 @@ class Forum extends Component {
     });
   };
 
-  // handleHelpful = (e) => {
-  //     e.preventDefault();
+  // handleHelpful = (id) => {
   //     this.setState(prevState => {
   //         return {
   //             helpfulCount: prevState.helpfulCount + 1
@@ -56,8 +54,7 @@ class Forum extends Component {
   //     })
   // }
 
-  // handleNotHelpful = (e) => {
-  //     e.preventDefault();
+  // handleNotHelpful = (id) => {
   //     this.setState(prevState => {
   //         return {
   //             notHelpfulCount: prevState.notHelpfulCount + 1
@@ -101,11 +98,14 @@ class Forum extends Component {
           <div key={index}>
             <h2 className="content-title">{tab.name}</h2>
             <div className="content">{tab.content}</div>
+            {/* <p> Did you find this comment helpful? </p>
+             <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="button" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
+              <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="button" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button> */}
           </div>
         );
       }
     });
-    return currentTab;
+      return currentTab;
   }
 
   renderTitle() {
@@ -129,26 +129,6 @@ class Forum extends Component {
       return content || title;
     });
 
-    // let listofcollections = 'Unknown';
-
-    // if(this.state.folderList.length !== 0 ){
-    //   listofcollections = this.state.folderList.map((collection, key) => {
-    //     const linkString = `/folderlist/show/${collection.id}`
-
-    // return (
-    //   <div className="list" key={key}>
-    //     {/* <Link to={linkString}>
-    //       <h3>{collection.collection_name}</h3>
-    //     </Link> */}
-    //     {/* <Link to={`/comment/add/${collection.id}`}>Add a comment</Link> */}
-    //     {/* <form onSubmit={this.deleteCollection} className="deleteForm">
-    //       <input type="hidden" name='collectionId' defaultValue={collection.id}></input>
-    //       <button type="submit" className="deleteButton">Delete Collection</button>
-    //     </form> */}
-    //   </div>
-    //   )
-    // });
-    // }
     return (
       <div>
         <Navbar />
@@ -158,7 +138,7 @@ class Forum extends Component {
           <form className="forum-form">
             <fieldset className="search-div">
               <label className="search-label" htmlFor="search-term">
-                Enter a keyword of your choice: 
+                Enter a keyword of your choice:
               </label>
               <input
                 className="search-input"
@@ -177,22 +157,17 @@ class Forum extends Component {
                     <h2>{name}</h2>
                     <p>{content}</p>
                   </div>
+                  
                 ))}
             </div>
 
             <div className="tabsContainer">
-            <p className='intro'>Click on a tab and search posts per topics!</p>
+              <p className='intro'>Click on a tab and search posts per topics!</p>
 
               {this.renderButtons()}
-              {/* {listofcollections} */}
-              {/* {this.renderTitle()} */}
               {!!this.props.tabs.length && this.renderContent()}
-              {/* <Link to="/booklist/create">Create a collection</Link> */}
-            </div>
 
-            {/* <p> Did you find this comment helpful? </p> */}
-            {/* <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="submit" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
-                        <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="submit" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button> */}
+            </div>
 
             {/* <p className="error-message">error: please enter a comment</p>
                         <p className="error-message">error: please select a category</p> */}

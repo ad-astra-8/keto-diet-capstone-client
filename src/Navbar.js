@@ -12,7 +12,7 @@ function Navbar() {
           <NavLink to="/about" className="nav-link"><li>About</li></NavLink>
           <NavLink to="/search-recipes" className="nav-link"><li>Recipes</li></NavLink>
           <NavLink to="/forum" className="nav-link"><li>Forum</li></NavLink>
-          {/* <NavLink to="/account"><li>My Account</li></NavLink> */}
+          <NavLink to="/account" className="nav-link"><li>My Account</li></NavLink>
           {/* <li className="log-out"><a href="#log out">Log out</a></li> */}
         </ul>
       </nav>
