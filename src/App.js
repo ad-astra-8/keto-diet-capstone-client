@@ -9,7 +9,8 @@ import HomePage from './HomePage'
 import About from './About'
 import Recipes from './Recipes'
 import Forum from './Forum'
-// import tabsProp from './Data';
+// import tabsProp from './Data'
+// import Footer from './Footer'
 
 
 
@@ -57,9 +58,10 @@ componentDidMount(){
 
   render() {
     // console.log(tabsProp)
-
+  
     return (
-      <main className="App">
+      <div className="App">
+      <main >
         <BrowserRouter>
           {/* <LandingPage /> */}
           {/* <HomePage /> */}
@@ -77,7 +79,6 @@ componentDidMount(){
             <Route exact path='/search-recipes' component={Recipes} />
             <Route exact path='/forum'
               render={props => <Forum tabs={this.state.tabsProp} updateNote={this.updateNote}/>}
-            // component={Forum} />
             />
             {/* <Route path='/my-recipes-page' component={MyRecipesPage} />
             <Route path='/my-posts-page' component={MyPostsPage} /> */}
@@ -88,6 +89,10 @@ componentDidMount(){
           <MyPostsPage /> */}
         </BrowserRouter>
       </main>
+      <footer>
+        {/* <Footer /> */}
+      </footer>
+      </div>
     )
   }
 }

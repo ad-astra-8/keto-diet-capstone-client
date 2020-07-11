@@ -121,6 +121,7 @@ class Recipes extends Component {
                 </a>
                 {/*</Link> */}
               <p>{result.sourceName}</p>
+              <button type="submit" id="fav-btn">add fav<i class="fa fa-heart" aria-hidden="true"></i></button>
             </li>
           </div>
         ));

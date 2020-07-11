@@ -31,7 +31,7 @@ function About() {
         This may be because it takes more calories to change fat into energy than it does to change carbs into energy. 
         It’s also possible that a high-fat, high-protein diet satisfies you more, so you eat less, but that hasn’t been proved yet.</p>
        
-        <div className='sources-div'>
+        <p className='sources-div'>
         <p className="intro">You can find links to other sources below: </p>
         <ul className='sources-ul'>
         <li className='sources-li'><a href="https://alldayidreamaboutfood.com/" target='_blank' rel="noopener noreferrer">All Day I Dream About Food</a></li>
@@ -40,7 +40,7 @@ function About() {
         <li className='sources-li'><a href="https://www.pinterest.com/search/pins/?q=keto&rs=typed&term_meta[]=keto%7Ctyped" target='_blank' rel="noopener noreferrer">Pinterest (keto section)</a></li>
         <li className='sources-li'><a href="https://nobunplease.com/" target='_blank' rel="noopener noreferrer">No Bun Please</a></li>
         </ul>
-        </div>
+        </p>
       </section>
     </div>
   );

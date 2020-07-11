@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AddPost from './AddPost';
+import HomePage from '../HomePage';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<AddPost />, div);
+  ReactDOM.render(<HomePage
+ />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

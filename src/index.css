@@ -482,18 +482,26 @@ Footer styles (Main Module)
 (all the styles inside the < footer > tag)
 */
 
-/* .footer {
-  padding: 20px;
+.footer {
+  padding: 12px;
+  font-size: 14px;
   text-align: center;
-  line-height: 5px;
+  line-height: 3px;
   background-color: #2778AF;
-} */
+}
 
 .addPost {
-    border-top: black solid 0.5px;
+  border-top: black solid 0.5px;
+}
+
+.about {
+  height: auto;
   }
 
-
+.forum {
+  height: auto;
+  }
+ 
 /* -------------------------------------
 place all the desktop styles above this line
 Responsive styles
