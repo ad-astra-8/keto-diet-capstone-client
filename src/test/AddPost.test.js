@@ -4,6 +4,10 @@ import AddPost from '../AddPost';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<AddPost />, div);
+  ReactDOM.render(
+    <BrowserRouter>
+      <AddPost />
+    </BrowserRouter>
+    , div);
   ReactDOM.unmountComponentAtNode(div);
 });
