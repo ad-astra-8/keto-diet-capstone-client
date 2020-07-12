@@ -15,7 +15,7 @@ import Forum from "./Forum";
 class App extends Component {
   state = {
     tabsProp: [],
-    favorites: []
+    // favorites: []
   };
 
   componentDidMount() {
