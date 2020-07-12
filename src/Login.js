@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import config from "./config";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -134,7 +134,7 @@ class Login extends Component {
     return (
       <section className="login-component">
         <div className="login-div">
-          <Link to="/forum">forum</Link>
+          {/* <Link to="/forum">forum</Link> */}
           <h1 className="title">Everything Keto</h1>
           <h2 className="subtitle">Log in to enter Ketosis!</h2>
           <div className="form-div">
