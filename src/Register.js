@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import config from "./config";
+import AuthApiService from '../services/auth-api-service';
+import TokenService from '../services/token-service.js';
 
 class Register extends Component {
   constructor(props) {
@@ -107,6 +109,8 @@ class Register extends Component {
         })
         // use the json api output
         .then((data) => {
+          TokenService.saveAuthToken(response.authToken)
+          TokenService.saveUserId(response.id)
           //check if there is meaningfull data
           console.log(data);
           // check if there are no results
