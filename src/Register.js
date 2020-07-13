@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import config from "./config";
-import AuthApiService from '../services/auth-api-service';
-import TokenService from '../services/token-service.js';
+// import config from "./config";
+import AuthApiService from './services/auth-api-service';
+import TokenService from './services/token-service';
 
 class Register extends Component {
   constructor(props) {
@@ -15,16 +15,45 @@ class Register extends Component {
     };
   }
 
-  formatQueryParams(params) {
-    const queryItems = Object.keys(params).map(
-      (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
-    );
-    return queryItems.join("&");
+  // formatQueryParams(params) {
+  //   const queryItems = Object.keys(params).map(
+  //     (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
+  //   );
+  //   return queryItems.join("&");
+  // }
+
+  handleLoginSuccess = user => {
+    window.location = '/user/dash'
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { registerUsername,  registerPassword } = event.target
+    console.log('registerUsername:', registerUsername.value, " registerPassword:",  registerPassword.value);
+    AuthApiService.postLogin({
+      registerUsername: registerUsername.value,
+       registerPassword:  registerPassword.value,
+    })
+
+      .then(response => {
+        console.log("response ID", response)
+        registerUsername.value = ''
+         registerPassword.value = ''
+        TokenService.saveAuthToken(response.authToken)
+        TokenService.saveUserId(response.userId)
+        window.location = '/user/dash'
+      })
+      .then(response => {
+        console.log("response:", response)
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+   
   validateUsername(inputEmail) {
     let outputEmail = inputEmail;
-    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let mailformat = /^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/;
     if (!inputEmail.match(mailformat)) {
       outputEmail = "";
     }
@@ -42,89 +71,93 @@ class Register extends Component {
     return outputPassword;
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
     //create an object to store the search filters
-    const data = {};
-
+    // const data = {};
     //get all the from data from the form component
-    const formData = new FormData(e.target);
+    // const formData = new FormData(e.target);
 
     //for each of the keys in form data populate it with form value
-    for (let value of formData) {
-      data[value[0]] = value[1];
-    }
-    console.log(data);
-    let { registerUsername, registerPassword } = data;
+    // for (let value of formData) {
+    //   data[value[0]] = value[1];
+    // }
+    // console.log(data);
+    // let { registerUsername, registerPassword } = data;
+
+
+
+
     //starting validation
     //validate username
-    if (this.validateUsername(registerUsername) === "") {
-      this.setState({
-        error: "username must be an email address",
-      });
-    }
+    // if (this.validateUsername(registerUsername) === "") {
+    //   this.setState({
+    //     error: "username must be an email address",
+    //   });
+    // }
     //validate password
-    else if (this.validatePassword(registerPassword) === "") {
-      this.setState({
-        error: "password is not valid",
-      });
-    }
+    // else if (this.validatePassword(registerPassword) === "") {
+    //   this.setState({
+    //     error: "password is not valid",
+    //   });
+    // }
     //if validation successful, make API call
-    else {
+    // else {
       //assigning the object from the form data to params in the state
-      this.setState({
-        params: data,
-        error: null,
-      });
+      // this.setState({
+      //   params: data,
+      //   error: null,
+      // });
 
       //check if the state is populated with the search params data
-      console.log(this.state.params);
+      // console.log(this.state.params);
 
-      const searchURL = `${config.API_ENDPOINT}/registration-page`;
+      // const searchURL = `${config.API_ENDPOINT}/registration-page`;
 
-      const queryString = this.formatQueryParams(data);
+      // // const queryString = this.formatQueryParams(data);
 
-      //sent all the params to the final url
-      const url = searchURL + "?" + queryString;
-      console.log(url);
+      // //sent all the params to the final url
+      // const url = searchURL + "?" + queryString;
+      // console.log(url);
 
-      //define the API call parameters
-      const options = {
-        method: "POST",
-        header: {
-          Authorization: "",
-          "Content-Type": "application/json",
-        },
-      };
+      // //define the API call parameters
+      // const options = {
+      //   method: "POST",
+      //   header: {
+      //     Authorization: "",
+      //     "Content-Type": "application/json",
+      //   },
+      // };
 
       //using the url and paramters above make the api call
-      fetch(url, options)
-        // if the api returns data ...
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error("Something went wrong, please try again later.");
-          }
-          // ... convert it to json
-          return res.json();
-        })
-        // use the json api output
-        .then((data) => {
-          TokenService.saveAuthToken(response.authToken)
-          TokenService.saveUserId(response.id)
-          //check if there is meaningfull data
-          console.log(data);
-          // check if there are no results
-          if (data.totalItems === 0) {
-            throw new Error("No data found");
-          }
-        })
-        .catch((err) => {
+      // fetch(url, options)
+      //   // if the api returns data ...
+      //   .then((res) => {
+      //     TokenService.saveAuthToken(res.authToken)
+      //     TokenService.saveUserId(res.id)
+
+      //     if (!res.ok) {
+      //       throw new Error("Something went wrong, please try again later.");
+      //     }
+      //     // ... convert it to json
+      //     return res.json();
+      //   })
+      //   // use the json api output
+      //   .then((data) => {
+      //     //check if there is meaningfull data
+      //     console.log(data);
+      //     // check if there are no results
+      //     if (data.totalItems === 0) {
+      //       throw new Error("No data found");
+      //     }
+      //   })
+        // .catch((err) => {
           // this.setState({
           //     error: err.message
           // })
-        });
-    }
-  };
+  //       });
+  //   }
+  // };
 
   render() {
     const errorMessage = this.state.error ? (

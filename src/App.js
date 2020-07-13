@@ -10,7 +10,6 @@ import About from "./About";
 import Recipes from "./Recipes";
 import Forum from "./Forum";
 // import tabsProp from './Data'
-// import Footer from './Footer'
 
 class App extends Component {
   state = {
@@ -135,7 +134,6 @@ class App extends Component {
             </Switch>
           </BrowserRouter>
         </main>
-        <footer>{/* <Footer /> */}</footer>
       </div>
     );
   }

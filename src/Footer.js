@@ -2,9 +2,9 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p className="copyright">© Copyright 2020 Wanda Antoine</p>
-    </div>
+    </footer>
   );
 }
 

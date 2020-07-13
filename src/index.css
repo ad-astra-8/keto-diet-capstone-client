@@ -56,7 +56,6 @@ body {
 section {
   padding: 30px 20px 40px 20px;
   /* border-bottom: solid black 1px; */
-  height: 700px;
 }
 
 h1 {
@@ -75,7 +74,7 @@ h1 {
 
 button {
   margin: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: rgb(103, 170, 94);
   text-decoration: none;
   border: none;
@@ -219,7 +218,8 @@ a:hover {
  .tab {
   margin: 40px;
   padding: 20px;
-
+  background-color: #2778AF;
+  width: 150px;
 }
 
 
@@ -257,6 +257,10 @@ a:hover {
   margin: 0;
 }
 
+#fav-btn{
+  background-color: #F5F5F5;
+  border: solid 1px white;
+}
 .homepage-h2 {
   text-align: center;
 }
@@ -502,6 +506,16 @@ Footer styles (Main Module)
   height: auto;
   }
  
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  }
+
+ .App {
+   flex: 1
+ } 
+
 /* -------------------------------------
 place all the desktop styles above this line
 Responsive styles

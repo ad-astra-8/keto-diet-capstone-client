@@ -93,7 +93,7 @@ class Forum extends Component {
       if (this.state.currentTabIndex === tab.id_folder) {
         console.log(tab);
         console.log(tab.id_folder);
-      
+
         return (
           <div key={index}>
             <h2 className="content-title">{tab.name}</h2>
@@ -104,8 +104,9 @@ class Forum extends Component {
           </div>
         );
       }
+
     });
-      return currentTab;
+    return currentTab;
   }
 
   renderTitle() {
@@ -134,7 +135,7 @@ class Forum extends Component {
         <Navbar />
         <section className="forum">
           <h2 className="section-title">Forum</h2>
-          <p className='intro'>Filter your search and check your results below!</p>
+          <p className='intro'>Search for a post containing a specific keyword and check your results below!</p>
           <form className="forum-form">
             <fieldset className="search-div">
               <label className="search-label" htmlFor="search-term">
@@ -157,7 +158,7 @@ class Forum extends Component {
                     <h2>{name}</h2>
                     <p>{content}</p>
                   </div>
-                  
+
                 ))}
             </div>
 
