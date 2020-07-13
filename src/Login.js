@@ -22,8 +22,8 @@ class Login extends Component {
     const { loginUsername, loginPassword } = event.target
     console.log('loginUsername:', loginUsername.value, "loginPassword:", loginPassword.value);
     AuthApiService.postLogin({
-      loginUsername: loginUsername.value,
-      loginPassword: loginPassword.value,
+      userName: loginUsername.value,
+      password: loginPassword.value,
     })
 
       .then(response => {
@@ -32,7 +32,7 @@ class Login extends Component {
         loginPassword.value = ''
         TokenService.saveAuthToken(response.authToken)
         TokenService.saveUserId(response.userId)
-        window.location = '/user/dash'
+        window.location = '/homepage'
       })
       .then(response => {
         console.log("response:", response)
