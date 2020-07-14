@@ -111,9 +111,12 @@ textarea {
 
 .sources-container {
   background-color: #2778AF;
-  text-align: left;
+  text-align: center;
+  line-height: 1.5;
   margin-bottom: 40px;
   margin-top: 40px;
+  padding-bottom: 20px;
+
 }
 
 .sources-li {
