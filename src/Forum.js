@@ -46,22 +46,6 @@ class Forum extends Component {
     });
   };
 
-  // handleHelpful = (id) => {
-  //     this.setState(prevState => {
-  //         return {
-  //             helpfulCount: prevState.helpfulCount + 1
-  //         }
-  //     })
-  // }
-
-  // handleNotHelpful = (id) => {
-  //     this.setState(prevState => {
-  //         return {
-  //             notHelpfulCount: prevState.notHelpfulCount + 1
-  //         }
-  //     })
-  // }
-
   handleTabClick = (id_folder) => {
     console.log("button clicked!", { id_folder });
     this.setState({ currentTabIndex: id_folder });
@@ -97,10 +81,7 @@ class Forum extends Component {
         return (
           <div key={index}>
             <h2 className="content-title">{tab.name}</h2>
-            <div className="content">{tab.content}</div>
-            {/* <p> Did you find this comment helpful? </p>
-             <i className="fa fa-thumbs-up" aria-hidden="true"></i><button type="button" id="update-helpful-button" onClick={this.handleHelpful}>Helpful ({this.state.helpfulCount})</button>
-              <i className="fa fa-thumbs-down" aria-hidden="true"></i><button type="button" id="update-notHelpful-button" onClick={this.handleNotHelpful}>Not helpful ({this.state.notHelpfulCount})</button> */}
+            <div className="content"><p className="content-p">{tab.content}</p></div>
           </div>
         );
       }
@@ -169,9 +150,6 @@ class Forum extends Component {
               {!!this.state.folderList.length && this.renderContent()}
 
             </div>
-
-            {/* <p className="error-message">error: please enter a comment</p>
-                        <p className="error-message">error: please select a category</p> */}
           </form>
 
           <AddPost tabs={this.state.tabs} updateNote={this.props.updateNote} />
