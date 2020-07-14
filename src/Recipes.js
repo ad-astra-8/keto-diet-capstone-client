@@ -183,10 +183,10 @@ class Recipes extends Component {
     return (
       <div>
         <Navbar />
-        <section className="recipes" onSubmit={this.handleSubmit} >
+        <section className="recipes">
           <h2 className="section-title">Keto Recipes</h2>
           <p className='intro'> Search for a keto recipe based on a keyword and check your results below!</p>
-          <form className="search-recipe-form">
+          <form className="search-recipe-form" onSubmit={this.handleSubmit}>
             <label htmlFor="search-term">
               Enter an ingredient of your choice:
             </label>
