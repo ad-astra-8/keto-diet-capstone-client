@@ -100,7 +100,9 @@ class Login extends Component {
           <div className="link-register">
             <p>Don't have an account yet?</p>
             <a href="#register-component" className="register-link">
-              <span>Sign up here</span>
+              {/* <Link to="/register" component={Register}>Sign up here</Link> */}
+              {/* <Route exact path="/about" component={About}/> */}
+
             </a>
           </div>
         </div>

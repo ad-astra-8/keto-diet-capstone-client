@@ -5,9 +5,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
+  const tabs = { 1: "Routine", 2: "Workout", 3: "Recipes" };
   ReactDOM.render(
     <BrowserRouter>
-      <AddPost />
+      <AddPost tabs={tabs}/>
     </BrowserRouter>
     , div);
   ReactDOM.unmountComponentAtNode(div);

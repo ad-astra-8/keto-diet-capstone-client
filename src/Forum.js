@@ -77,6 +77,9 @@ class Forum extends Component {
             <div className="content"><p className="content-p">{tab.content}</p></div>
           </div>
         );
+      } else {
+        
+        return null;
       }
 
     });
