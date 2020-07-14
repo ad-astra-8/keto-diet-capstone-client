@@ -81,7 +81,7 @@ class AddPost extends Component {
   };
 
   render() {
-    // console.log(this.props.tabs)
+    console.log(this.props.tabs)
     // console.log(this.state.tabName)
     return (
       <div>

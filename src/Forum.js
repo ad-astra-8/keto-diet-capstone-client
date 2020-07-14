@@ -93,7 +93,7 @@ class Forum extends Component {
 
   render() {
     console.log(this.state.folderList);
-    console.log(this.props.tabs)
+    // console.log(this.props.tabs)
     const filteredForum = this.state.folderList.filter((tab) => {
       let content = tab.content
         .toLowerCase()
@@ -127,12 +127,10 @@ class Forum extends Component {
             <div className="postResults">
               <h2>Results matching your specific search:</h2>
               {this.state.inputValue &&
-                filteredForum.map(({ name, content, modified }, index) => (
+                filteredForum.map(({ name, content, }, index) => (
                   <div key={index} className="searchTerm-results">
                     <h2>{name}</h2>
                     <p className="content-p">{content}</p>
-                    <p className="content-p">{modified}</p>
-
                   </div>
 
                 ))}
