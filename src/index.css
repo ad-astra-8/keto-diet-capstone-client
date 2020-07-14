@@ -514,6 +514,8 @@ Footer styles (Main Module)
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #2778AF;
+  height: 30px;
+
   /* border-radius: 10px; */
 }
 

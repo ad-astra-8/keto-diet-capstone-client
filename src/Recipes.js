@@ -154,59 +154,59 @@ class Recipes extends Component {
   };
 
 
-render() {
-  const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
-  const displayResults = this.state.loading
-    ? "loading the meals..."
-    : this.state.recipe.map((result, index) => (
-      <div className='div-results' key={index}>
-        <h2 className='result-title'>{result.title}</h2>
-        <li key={index} className="results-li">
-          <a href={result.sourceUrl} target='_blank' rel="noopener noreferrer">
-            <img
-              className="results-link"
-              src={result.image}
-              alt="meal-preview"
-            />
-          </a>
-          <p>{result.sourceName}</p>
-          <form onSubmit={this.addToFavorites} className="favForm">
-            <input type="hidden" name='user_id' defaultValue='1'></input>
-            <input type="hidden" name='title' defaultValue={result.title}></input>
-            <input type="hidden" name='image' defaultValue={result.image}></input>
-            <input type="hidden" name='source' defaultValue={result.sourceUrl}></input>
-            <button type="submit" id="fav-btn"><i className="fa fa-heart" aria-hidden="true"></i></button>
-          </form>
-        </li>
-      </div>
-    ));
-  return (
-    <div>
-      <Navbar />
-      <section className="recipes" onSubmit={this.handleSubmit} >
-        <h2 className="section-title">Keto Recipes</h2>
-        <p className='intro'> Search for a keto recipe based on a keyword and check your results below!</p>
-        <form className="search-recipe-form">
-          <label htmlFor="search-term">
-            Enter an ingredient of your choice:
+  render() {
+    const errorMessage = this.state.error ? <p className="error-message">{this.state.error}</p> : false
+    const displayResults = this.state.loading
+      ? "loading the meals..."
+      : this.state.recipe.map((result, index) => (
+        <div className='div-results' key={index}>
+          <h2 className='result-title'>{result.title}</h2>
+          <li key={index} className="results-li">
+            <a href={result.sourceUrl} target='_blank' rel="noopener noreferrer">
+              <img
+                className="results-link"
+                src={result.image}
+                alt="meal-preview"
+              />
+            </a>
+            <p>{result.sourceName}</p>
+            <form onSubmit={this.addToFavorites} className="favForm">
+              <input type="hidden" name='user_id' defaultValue='1'></input>
+              <input type="hidden" name='title' defaultValue={result.title}></input>
+              <input type="hidden" name='image' defaultValue={result.image}></input>
+              <input type="hidden" name='source' defaultValue={result.sourceUrl}></input>
+              <button type="submit" id="fav-btn"><i className="fa fa-heart" aria-hidden="true"></i></button>
+            </form>
+          </li>
+        </div>
+      ));
+    return (
+      <div>
+        <Navbar />
+        <section className="recipes" onSubmit={this.handleSubmit} >
+          <h2 className="section-title">Keto Recipes</h2>
+          <p className='intro'> Search for a keto recipe based on a keyword and check your results below!</p>
+          <form className="search-recipe-form">
+            <label htmlFor="search-term">
+              Enter an ingredient of your choice:
             </label>
-          {errorMessage}
-          <input
-            type="input"
-            name="query"
-            className="search-term"
-            placeholder="chocolate"
-            required
-          />
-          <button type="submit" id="submit-btn">
-            Search
-            </button>
+            {errorMessage}
+            <input
+              type="input"
+              name="query"
+              className="search-term"
+              placeholder="chocolate"
+              required
+            />
+            <button type="submit" id="submit-btn">
+              Search
+          </button>
+          </form>
           <ul className="results-list">{displayResults}</ul>
-        </form>
-      </section>
-    </div>
-  );
-}
+        </section>
+      </div>
+    );
+  }
 }
 
 export default Recipes;
