@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import config from './config'
-// import ValidationError from './ValidationError';
 
 class AddPost extends Component {
   constructor(props) {
@@ -17,7 +15,6 @@ class AddPost extends Component {
     this.setState({
       tabName: {
         value: tabName,
-        // touched: true
       },
     });
   }
@@ -26,7 +23,6 @@ class AddPost extends Component {
     this.setState({
       name: {
         value: name,
-        // touched: true
       },
     });
   };
@@ -35,7 +31,6 @@ class AddPost extends Component {
     this.setState({
       content: {
         value: content,
-        // touched: true
       },
     });
   };
@@ -51,11 +46,10 @@ class AddPost extends Component {
 
     const { name, tabName, content } = e.target;
     const note = {
-      // note_name: title.value,
       name: name.value,
       id_folder: parseInt(tabName.value),
       content: content.value,
-      //   modified: new Date(),
+      // modified: new Date(),
     };
     console.log(note);
 
@@ -92,7 +86,7 @@ class AddPost extends Component {
     return (
       <div>
         <section className="addPost">
-        <p className='intro'>Select a topic to discuss and share your experience!</p>
+          <p className='intro'>Select a topic to discuss and share your experience!</p>
           <form className="add-note" onSubmit={this.handleSubmit}>
             <fieldset className="post-title">
               <label htmlFor="title">Give a title for your post</label>
@@ -138,7 +132,7 @@ class AddPost extends Component {
         </section>
 
       </div>
-      
+
     );
   }
 }

@@ -15,13 +15,6 @@ class Register extends Component {
     };
   }
 
-  // formatQueryParams(params) {
-  //   const queryItems = Object.keys(params).map(
-  //     (key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`
-  //   );
-  //   return queryItems.join("&");
-  // }
-
   handleLoginSuccess = user => {
     window.location = '/homePage'
   }
@@ -70,93 +63,6 @@ class Register extends Component {
     return outputPassword;
   }
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //create an object to store the search filters
-  // const data = {};
-  //get all the from data from the form component
-  // const formData = new FormData(e.target);
-
-  //for each of the keys in form data populate it with form value
-  // for (let value of formData) {
-  //   data[value[0]] = value[1];
-  // }
-  // console.log(data);
-  // let { registerUsername, registerPassword } = data;
-
-
-
-
-  //starting validation
-  //validate username
-  // if (this.validateUsername(registerUsername) === "") {
-  //   this.setState({
-  //     error: "username must be an email address",
-  //   });
-  // }
-  //validate password
-  // else if (this.validatePassword(registerPassword) === "") {
-  //   this.setState({
-  //     error: "password is not valid",
-  //   });
-  // }
-  //if validation successful, make API call
-  // else {
-  //assigning the object from the form data to params in the state
-  // this.setState({
-  //   params: data,
-  //   error: null,
-  // });
-
-  //check if the state is populated with the search params data
-  // console.log(this.state.params);
-
-  // const searchURL = `${config.API_ENDPOINT}/registration-page`;
-
-  // // const queryString = this.formatQueryParams(data);
-
-  // //sent all the params to the final url
-  // const url = searchURL + "?" + queryString;
-  // console.log(url);
-
-  // //define the API call parameters
-  // const options = {
-  //   method: "POST",
-  //   header: {
-  //     Authorization: "",
-  //     "Content-Type": "application/json",
-  //   },
-  // };
-
-  //using the url and paramters above make the api call
-  // fetch(url, options)
-  //   // if the api returns data ...
-  //   .then((res) => {
-  //     TokenService.saveAuthToken(res.authToken)
-  //     TokenService.saveUserId(res.id)
-
-  //     if (!res.ok) {
-  //       throw new Error("Something went wrong, please try again later.");
-  //     }
-  //     // ... convert it to json
-  //     return res.json();
-  //   })
-  //   // use the json api output
-  //   .then((data) => {
-  //     //check if there is meaningfull data
-  //     console.log(data);
-  //     // check if there are no results
-  //     if (data.totalItems === 0) {
-  //       throw new Error("No data found");
-  //     }
-  //   })
-  // .catch((err) => {
-  // this.setState({
-  //     error: err.message
-  // })
-  //       });
-  //   }
-  // };
 
   render() {
     const errorMessage = this.state.error ? (
@@ -164,6 +70,7 @@ class Register extends Component {
     ) : (
         false
       );
+      
     return (
       <section className="register-component">
         <div className="login-div">

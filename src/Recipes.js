@@ -81,6 +81,7 @@ class Recipes extends Component {
     //for each of the keys in form data populate it with form value
     for (let value of formData) {
       data[value[0]] = value[1];
+      value[1] = ""
     }
     console.log(data.query);
 

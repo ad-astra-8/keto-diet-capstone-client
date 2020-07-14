@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import AddPost from "./AddPost";
-// import config from "./config";
 
 class Forum extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // helpfulCount: 0,
-      // notHelpfulCount: 0,
       currentTabIndex: "",
       inputValue: "",
       folderList: [],
@@ -16,10 +13,6 @@ class Forum extends Component {
     };
   }
 
-  // static defaultProps = { tabs: [] };
-  // state = {
-  //   currentTabIndex: 0,
-  // };
 
   componentDidMount() {
     let getCollectionByUserId = `http://localhost:8000/api/notes`;
@@ -134,10 +127,12 @@ class Forum extends Component {
             <div className="postResults">
               <h2>Results matching your specific search:</h2>
               {this.state.inputValue &&
-                filteredForum.map(({ name, content }, index) => (
+                filteredForum.map(({ name, content, modified }, index) => (
                   <div key={index} className="searchTerm-results">
                     <h2>{name}</h2>
-                    <p>{content}</p>
+                    <p className="content-p">{content}</p>
+                    <p className="content-p">{modified}</p>
+
                   </div>
 
                 ))}
