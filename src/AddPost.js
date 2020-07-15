@@ -8,7 +8,6 @@ class AddPost extends Component {
       name: "",
       tabName: "",
       content: "",
-      comment: ""
     };
   }
 
@@ -39,7 +38,6 @@ class AddPost extends Component {
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value.trim() });
-    this.postComment.value = "";
   };
 
   handleSubmit = (e) => {
@@ -83,7 +81,7 @@ class AddPost extends Component {
   };
 
   render() {
-    console.log(this.props.tabs)
+    // console.log(this.props.tabs)
     // console.log(this.state.tabName)
     return (
       <div>
@@ -123,7 +121,7 @@ class AddPost extends Component {
                 placeholder="leave your comment here"
                 name="content"
                 // id="content"
-                value={this.state.comment}
+                // value=""
                 onChange={(e) => this.updateContent(e.target.value)}
               ></textarea>
             </fieldset>
