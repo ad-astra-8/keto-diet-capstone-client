@@ -9,6 +9,8 @@ import MyRecipesPage from "./MyRecipesPage";
 import About from "./About";
 import Recipes from "./Recipes";
 import Forum from "./Forum";
+import Login from './Login'
+import Register from './Register'
 // import tabsProp from './Data'
 
 class App extends Component {
@@ -42,7 +44,7 @@ class App extends Component {
         //     error: err.message
         // })
       });
-    }
+  }
 
 
   updateNote = (note) => {
@@ -54,7 +56,7 @@ class App extends Component {
 
   render() {
     // console.log(tabsProp)
-  
+
     return (
       <div className="App">
         <main>
@@ -66,7 +68,8 @@ class App extends Component {
                 path="/homepage"
                 render={(props) => <HomePage tabs={this.state.tabsProp} />}
               />
-
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route exact path="/about" component={About} />
               <Route exact path="/search-recipes" component={Recipes} />
               <Route exact path="/forum"
@@ -88,4 +91,4 @@ class App extends Component {
   }
 }
 
-  export default App;
+export default App;

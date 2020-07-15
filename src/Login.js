@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import config from "./config";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AuthApiService from './services/auth-api-service';
 import TokenService from './services/token-service';
 
@@ -70,13 +70,13 @@ class Login extends Component {
     return (
       <section className="login-component">
         <div className="login-div">
-          {TokenService.getUserId()}
+          {/* {TokenService.getUserId()} */}
           <h1 className="title">Everything Keto</h1>
           <h2 className="subtitle">Log in to enter Ketosis!</h2>
           <div className="form-div">
             <form className="login-form" onSubmit={this.handleSubmit}>
               {errorMessage}
-              <label htmlFor="loginUsername">Username:</label>
+              <label htmlFor="loginUsername">Username: new.user@ymail.com</label>
               <input
                 className="login-input"
                 type="text"
@@ -84,7 +84,7 @@ class Login extends Component {
                 placeholder="my.username@ymail.com"
                 required
               />
-              <label htmlFor="loginPassword">Password:</label>
+              <label htmlFor="loginPassword">Password: Newpassword1</label>
               <input
                 className="login-input"
                 type="Password"
@@ -99,11 +99,7 @@ class Login extends Component {
           </div>
           <div className="link-register">
             <p>Don't have an account yet?</p>
-            <a href="#register-component" className="register-link">
-              {/* <Link to="/register" component={Register}>Sign up here</Link> */}
-              {/* <Route exact path="/about" component={About}/> */}
-
-            </a>
+              <Link to="/register" className="register-link">Sign up here</Link>
           </div>
         </div>
       </section>
