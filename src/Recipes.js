@@ -57,10 +57,6 @@ class Recipes extends Component {
           favorite: existingFavorites
         })
         console.log(this.state)
-        //   this.setState({
-        //     favorite: response,
-        //   });
-        // console.log(this.state);
       })
 
       .catch((err) => {
@@ -204,6 +200,7 @@ class Recipes extends Component {
           </button>
           </form>
           <ul className="results-list">{displayResults}</ul>
+          
         </section>
       </div>
     );
