@@ -46,8 +46,7 @@ class Account extends Component {
             <div>
                 <Navbar />
                 <section className="my-account">
-                    <h1 className="">My Account:</h1>
-                    <Link to="/my-recipes-page"><h3>See my favorite recipes</h3></Link>
+                    <h1 className="">My Favs:</h1>
 
                 </section>
                 <div className="favorite-list">

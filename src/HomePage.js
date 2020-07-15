@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import TokenService from './services/token-service.js';
+
+
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -10,8 +14,9 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(this.props.tabs);
-
+    // console.log(this.props.tabs);
+    let User_Id = TokenService.getUserId();
+    console.log(User_Id)
     return (
       <div>
         <Navbar />
