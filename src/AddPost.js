@@ -73,6 +73,8 @@ class AddPost extends Component {
       .then((data) => {
         console.log(data);
         this.props.updateNote(data);
+        alert('Post added!');
+        window.location = '/forum'
       })
 
       .catch((error) => {

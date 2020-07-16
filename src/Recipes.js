@@ -56,7 +56,8 @@ class Recipes extends Component {
         this.setState({
           favorite: existingFavorites
         })
-        console.log(this.state)
+        // console.log(this.state)
+        alert('Recipe added to favorites! ;)');
       })
 
       .catch((err) => {

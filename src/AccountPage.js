@@ -35,9 +35,16 @@ class Account extends Component {
 
                 return (
                     <ul className="favorite" key={key}>
-                        <li>{favorite.title}</li>
-                        <li>{favorite.image}</li>
-                        <li>{favorite.source}</li>
+                        <li className='result-title'>{favorite.title}</li>
+                        <li>
+                            <a href={favorite.source} target='_blank' rel="noopener noreferrer">
+                                <img
+                                    className="results-link"
+                                    src={favorite.image}
+                                    alt="meal-preview"
+                                />
+                            </a>
+                        </li>
                     </ul>
                 )
             })
@@ -46,11 +53,9 @@ class Account extends Component {
             <div>
                 <Navbar />
                 <section className="my-account">
-                    <h1 className="">My Favs:</h1>
-
+                    <h1 className="">My F<i className="fa fa-heart" aria-hidden="true"></i>vs:</h1>
                 </section>
                 <div className="favorite-list">
-                    <h2>Favorites</h2>
                     {existingFavorites}
                 </div>
             </div>
