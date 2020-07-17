@@ -39,9 +39,9 @@ class Forum extends Component {
     });
   };
 
-  handleTabClick = (id_folder) => {
-    console.log("button clicked!", { id_folder });
-    this.setState({ currentTabIndex: id_folder });
+  handleTabClick = (note_folder_id) => {
+    console.log("button clicked!", { note_folder_id});
+    this.setState({ currentTabIndex: note_folder_id });
   };
 
   renderButtons() {
@@ -67,9 +67,9 @@ class Forum extends Component {
 
   renderContent() {
     const currentTab = this.props.tabs.map((tab, index) => {
-      if (this.state.currentTabIndex === tab.id_folder) {
-        console.log(tab);
-        console.log(tab.id_folder);
+      if (this.state.currentTabIndex === tab.note_folder_id) {
+        // console.log(tab);
+        // console.log(tab.id_folder);
 
         return (
           <div key={index}>
