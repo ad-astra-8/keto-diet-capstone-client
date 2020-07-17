@@ -263,19 +263,10 @@ a:hover {
 }
 
 .register-component {
-  /* background-image: url('/images/fridge-pic.jpg');
-  background-position: center center;
-  background-attachment: scroll;
-  display: block; */
   position: relative;
   padding-top: 80px;
   margin-top: 90px;
   text-align: center;
-  /* text-align: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
 }
 
 #submit-btn {
@@ -389,11 +380,6 @@ p.lorem {
 .results-list li {
   display: inline-block;
 }
-
-
-/* .results-list a {
-  background-color: rgb(255, 255, 255, 0.9); 
-} */
 
 .result-title {
   padding-bottom: 10px;

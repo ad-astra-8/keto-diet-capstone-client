@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-// import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import HomePage from "./HomePage";
 import AccountPage from "./AccountPage";
 import MyRecipesPage from "./MyRecipesPage";
-// import MyPostsPage from './MyPostsPage'
 import About from "./About";
 import Recipes from "./Recipes";
 import Forum from "./Forum";
 import Login from './Login'
 import Register from './Register'
-// import tabsProp from './Data'
 
 class App extends Component {
   state = {
@@ -20,7 +17,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    // console.warn('*****mounting****')
     fetch("http://localhost:8000/api/notes")
       // if the api returns data ...
       .then((res) => {
@@ -33,7 +29,6 @@ class App extends Component {
       // use the json api output
       .then((data) => {
         //check if there is meaningful data
-        // console.log(data);
         this.setState({
           tabsProp: data,
         });
@@ -55,7 +50,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(tabsProp)
 
     return (
       <div className="App">
@@ -81,7 +75,6 @@ class App extends Component {
                 )}
               />
               <Route path="/my-recipes-page" component={MyRecipesPage} />
-              {/* <Route path='/my-posts-page' component={MyPostsPage} /> */}
               <Route path="/account" component={AccountPage} />
             </Switch>
           </BrowserRouter>

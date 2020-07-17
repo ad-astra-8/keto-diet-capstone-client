@@ -49,14 +49,12 @@ class Recipes extends Component {
       })
 
       .then(response => {
-        console.log(response)
         let existingFavorites = this.state.favorite
         existingFavorites.push(response)
         //set data to state 
         this.setState({
           favorite: existingFavorites
         })
-        // console.log(this.state)
         alert('Recipe added to favorites! ;)');
       })
 
@@ -80,7 +78,6 @@ class Recipes extends Component {
       data[value[0]] = value[1];
       value[1] = ""
     }
-    console.log(data.query);
 
     let { searchTerm } = data;
     if (searchTerm === "") {
@@ -105,17 +102,6 @@ class Recipes extends Component {
       "?" +
       queryString +
       "&diet=ketogenic&number=4&instructionsRequired=true&addRecipeInformation=true&apiKey=006e4475b2c34b2ea02b8f008d4a3cef";
-    console.log(url);
-    console.log(queryString)
-    console.log(data['query'])
-
-    // const options = {
-    //   method: "GET",
-    //   header: {
-    //     Authorization: "",
-    //     "Content-Type": "application/json",
-    //   },
-    // };
 
     this.setState({ loading: true });
     //using the url and paramters above make the api call
@@ -137,7 +123,6 @@ class Recipes extends Component {
         });
 
         //check if there is meaningful data
-        // console.log(data.results);
 
         // check if there are no results
         if (data.results.length === 0) {

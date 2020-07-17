@@ -81,7 +81,7 @@ Full website graybox wireframes
 ## Screenshot
 Full Page Screenshot 
 :-------------------------:
-![Landing Page](/github-images/screenshots/FILENAMEHERE.jpg) 
+![Landing Page](/github-images/screenshots/homepage.png) 
 
 ## Functionality
 The app's functionality includes:
@@ -124,8 +124,6 @@ The app's functionality includes:
             * __Forum.js__ (statelful) - 
                  * __AddPost.js__ (statelful) - 
         * __AccountPage.js__ (stateful) - 
-            * __Navbar.js__ (stateless) - 
-        * __MyPostsPage.js__ (stateful) - 
             * __Navbar.js__ (stateless) - 
         * __MyRecipesPage.js__ (stateful) - 
             * __Navbar.js__ (stateless) - 

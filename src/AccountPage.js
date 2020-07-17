@@ -19,8 +19,6 @@ class Account extends Component {
         fetch(getFavoriteUrl)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-
                 this.setState({
                     favorites: data
                 });

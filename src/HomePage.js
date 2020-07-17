@@ -14,7 +14,6 @@ class HomePage extends Component {
   }
 
   render() {
-    // console.log(this.props.tabs);
     let User_Id = TokenService.getUserId();
     console.log(User_Id)
     return (

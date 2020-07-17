@@ -42,14 +42,12 @@ class AddPost extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("submit");
 
     const { name, tabName, content } = e.target;
     const note = {
       name: name.value,
       id_folder: parseInt(tabName.value),
       content: content.value,
-      // modified: new Date(),
     };
     console.log(note);
 
@@ -83,8 +81,6 @@ class AddPost extends Component {
   };
 
   render() {
-    // console.log(this.props.tabs)
-    // console.log(this.state.tabName)
     return (
       <div>
         <section className="addPost">
@@ -122,8 +118,6 @@ class AddPost extends Component {
                 id="postComment"
                 placeholder="leave your comment here"
                 name="content"
-                // id="content"
-                // value=""
                 onChange={(e) => this.updateContent(e.target.value)}
               ></textarea>
             </fieldset>

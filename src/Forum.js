@@ -78,7 +78,7 @@ class Forum extends Component {
           </div>
         );
       } else {
-        
+
         return null;
       }
 
@@ -88,15 +88,12 @@ class Forum extends Component {
 
   renderTitle() {
     const currentTitle = this.props.tabs[this.state.currentTabIndex];
-    // console.log(currentTitle)
-    // console.log(this.props.tabs)
 
     return currentTitle && <h2>{currentTitle.name}</h2>;
   }
 
   render() {
     console.log(this.state.folderList);
-    // console.log(this.props.tabs)
     const filteredForum = this.state.folderList.filter((tab) => {
       let content = tab.content
         .toLowerCase()

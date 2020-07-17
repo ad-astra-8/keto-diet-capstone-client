@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Login from './Login'
-// import Register from './Register'
 
 
 
@@ -9,7 +8,6 @@ class LandingPage extends Component {
         return (
             <div>
                 <Login />
-                {/* <Register /> */}
             </div>
         )
     }
