@@ -6,11 +6,11 @@ The app will teach the users about the keto diet and guide them through the proc
 Once successfully registered and logged in, users will be able to search for keto recipes based on a choosen ingredient.
 The app will be using Spoonacular API. It will display recipes nutriment information as well as their pictures. 
 They will also be able to save their favorite recipes into their account, as well as access them every time they log in.
-All the more, the app will enable users to read post/update/delete comments about diet routine, general ideas or even share their own recipes.
+All the more, the app will enable users to read post comments about diet routine, general ideas or even share their own recipes.
 It’s user-friendly, and accessible to everyone.
 
 ## Working Prototype
-You can access a working prototype of the app here: !!!! WORKING PROTOTYPE HERE !!!!
+You can access a working prototype of the node app here: https://keto-diet-api.herokuapp.com/ and react app 
 
 ## User Stories
 This app is for logged-in user.
