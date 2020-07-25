@@ -93,10 +93,6 @@ The app's functionality includes:
     * email (email validation)
     * password (at least one number, one lowercase and one uppercase letter at least eight characters that are letters, numbers or the underscore)
 
-* Forum folders
-     * id 
-     * title
-
 * Forum 
     * id 
     * user_id
@@ -104,6 +100,13 @@ The app's functionality includes:
     * title
     * description 
 
+* Notes 
+    * id 
+    * name
+    * content
+    * modified
+    * id_folder
+  
 * Recipes
     * id
     * user_id
@@ -145,8 +148,7 @@ App is built to be usable on mobile devices, as well as responsive across mobile
 ## Development Roadmap
 This is v1.0 of the app, but future enhancements are expected to include:
 * More pages in order to include more search results 
-* A feature that will allow the users to ??????? SOMETHING HERE ????????
-
+* A feature that will provide US & Metric Liquid Volume Conversions
 
 ## How to run it
 Use command line to navigate into the project folder and run the following in terminal
