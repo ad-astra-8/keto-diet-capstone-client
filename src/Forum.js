@@ -18,7 +18,7 @@ class Forum extends Component {
     let getCollectionByUserId = `https://keto-diet-api.herokuapp.com/api/notes`;
     //  /${TokenService.getUserId()}`;
 
-    console.log(getCollectionByUserId);
+    // console.log(getCollectionByUserId);
 
     fetch(getCollectionByUserId)
       .then((response) => response.json())
@@ -40,7 +40,7 @@ class Forum extends Component {
   };
 
   handleTabClick = (note_folder_id) => {
-    console.log("button clicked!", { note_folder_id});
+    // console.log("button clicked!", { note_folder_id})
     this.setState({ currentTabIndex: note_folder_id });
   };
 
@@ -93,7 +93,7 @@ class Forum extends Component {
   }
 
   render() {
-    console.log(this.state.folderList);
+    // console.log(this.state.folderList);
     const filteredForum = this.state.folderList.filter((tab) => {
       let content = tab.content
         .toLowerCase()

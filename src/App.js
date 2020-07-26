@@ -29,7 +29,7 @@ class App extends Component {
       // use the json api output
       .then((data) => {
         //check if there is meaningful data
-        console.log({data});
+        // console.log({data});
         
         this.setState({
           tabsProp: data,
@@ -52,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-console.log(this.state.tabsProp);
+// console.log(this.state.tabsProp);
 
     return (
       <div className="App">
