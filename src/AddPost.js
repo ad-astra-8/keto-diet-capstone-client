@@ -51,7 +51,7 @@ class AddPost extends Component {
     };
     console.log(note);
 
-    const url = "http://localhost:8000/api/notes";
+    const url = "https://keto-diet-api.herokuapp.com/api/notes";
 
     fetch(url, {
       method: "POST",

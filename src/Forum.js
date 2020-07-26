@@ -15,7 +15,7 @@ class Forum extends Component {
 
 
   componentDidMount() {
-    let getCollectionByUserId = `http://localhost:8000/api/notes`;
+    let getCollectionByUserId = `https://keto-diet-api.herokuapp.com/api/notes`;
     //  /${TokenService.getUserId()}`;
 
     console.log(getCollectionByUserId);

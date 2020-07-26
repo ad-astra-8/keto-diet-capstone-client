@@ -17,7 +17,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:8000/api/notes")
+    fetch("https://keto-diet-api.herokuapp.com/api/notes")
       // if the api returns data ...
       .then((res) => {
         if (!res.ok) {
