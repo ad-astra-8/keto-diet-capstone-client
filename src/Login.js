@@ -19,14 +19,12 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { loginUsername, loginPassword } = event.target
-    console.log('loginUsername:', loginUsername.value, "loginPassword:", loginPassword.value);
     AuthApiService.postLogin({
       userName: loginUsername.value,
       password: loginPassword.value,
     })
 
       .then(response => {
-        console.log("response ID", response)
         loginUsername.value = ''
         loginPassword.value = ''
         TokenService.saveAuthToken(response.authToken)
@@ -34,10 +32,9 @@ class Login extends Component {
         window.location = '/homepage'
       })
       .then(response => {
-        console.log("response:", response)
       })
       .catch(err => {
-        console.log(err);
+        alert(err);
       });
   }
 

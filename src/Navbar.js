@@ -8,10 +8,8 @@ class Navbar extends Component {
 
 
   logOutClick = () => {
-    console.log('Logging out')
     TokenService.clearAuthToken()
     TokenService.getUserId = (id) => {
-      // console.log(id)
     }
 
     window.location = '/'
@@ -25,8 +23,8 @@ class Navbar extends Component {
             <NavLink to="/about" className="nav-link"><li>About</li></NavLink>
             <NavLink to="/search-recipes" className="nav-link"><li>Recipes</li></NavLink>
             <NavLink to="/forum" className="nav-link"><li>Forum</li></NavLink>
-            <NavLink to="/account" className="nav-link"><li>My account</li></NavLink>
-            <NavLink to="/" onClick={this.logOutClick} className="nav-link"><li href="#log out">Log out</li></NavLink>
+            <NavLink to="/account" className="nav-link"><li>Favs</li></NavLink>
+            <NavLink to="/" onClick={this.logOutClick} className="nav-link"><li href="#log out"><i class="fa fa-sign-out" aria-hidden="true"></i></li></NavLink>
           </ul>
         </nav>
       </header>

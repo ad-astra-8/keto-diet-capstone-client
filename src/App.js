@@ -29,7 +29,6 @@ class App extends Component {
       // use the json api output
       .then((data) => {
         //check if there is meaningful data
-        // console.log({data});
         
         this.setState({
           tabsProp: data,
@@ -45,14 +44,12 @@ class App extends Component {
 
 
   updateNote = (note) => {
-    console.log(note);
     this.setState({
       tabsProp: [...this.state.tabsProp, note],
     });
   }
 
   render() {
-// console.log(this.state.tabsProp);
 
     return (
       <div className="App">

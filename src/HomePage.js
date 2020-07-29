@@ -15,7 +15,6 @@ class HomePage extends Component {
 
   render() {
     let User_Id = TokenService.getUserId();
-    console.log(User_Id)
     return (
       <div>
         <Navbar />

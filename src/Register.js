@@ -21,7 +21,6 @@ class Register extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { registerUsername, registerPassword } = event.target;
-    // console.log('username:', userName.value, 'password:', password.value);
     this.setState({ error: null })
     AuthApiService.postUser({
       email: registerUsername.value,
@@ -29,7 +28,6 @@ class Register extends Component {
     })
 
       .then(response => {
-        console.log('user:', response)
         registerUsername.value = ''
         registerPassword.value = ''
         TokenService.saveAuthToken(response.authToken)

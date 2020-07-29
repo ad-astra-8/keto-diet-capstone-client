@@ -18,34 +18,27 @@ class Forum extends Component {
     let getCollectionByUserId = `https://keto-diet-api.herokuapp.com/api/notes`;
     //  /${TokenService.getUserId()}`;
 
-    // console.log(getCollectionByUserId);
-
     fetch(getCollectionByUserId)
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
         this.setState({
           folderList: data,
         });
       })
-      .catch((error) => console.log(error));
-    // console.log('Stateful component Dashboard successfully mounted.');
+      .catch((error) => alert(error));
   }
 
   forumFilterOnChange = (event) => {
-    console.log("hi from onChange", event.target.value);
     this.setState({
       inputValue: event.target.value,
     });
   };
 
   handleTabClick = (note_folder_id) => {
-    // console.log("button clicked!", { note_folder_id})
     this.setState({ currentTabIndex: note_folder_id });
   };
 
   renderButtons() {
-    // console.log(this.props);
     const currentButton = Object.entries(this.state.tabs).map(
       ([key, value]) => {
         let id = parseInt(key);
@@ -68,8 +61,6 @@ class Forum extends Component {
   renderContent() {
     const currentTab = this.props.tabs.map((tab, index) => {
       if (this.state.currentTabIndex === tab.note_folder_id) {
-        // console.log(tab);
-        // console.log(tab.id_folder);
 
         return (
           <div key={index}>
@@ -93,7 +84,6 @@ class Forum extends Component {
   }
 
   render() {
-    // console.log(this.state.folderList);
     const filteredForum = this.state.folderList.filter((tab) => {
       let content = tab.content
         .toLowerCase()

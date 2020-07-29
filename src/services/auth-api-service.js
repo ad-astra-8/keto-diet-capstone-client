@@ -17,7 +17,7 @@ const AuthApiService = {
         res.json()
       )
       .catch(err => {
-        console.log('error:', err)
+        alert('error:', err)
       })
   },
   // register user
@@ -35,7 +35,7 @@ const AuthApiService = {
       res.json()
       )
       .catch(err => {
-        console.log('error:', err)
+        alert('error:', err)
       })
   },
 }

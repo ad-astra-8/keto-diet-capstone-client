@@ -49,7 +49,6 @@ class AddPost extends Component {
       id_folder: parseInt(tabName.value),
       content: content.value,
     };
-    console.log(note);
 
     const url = "https://keto-diet-api.herokuapp.com/api/notes";
 
@@ -69,7 +68,6 @@ class AddPost extends Component {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         this.props.updateNote(data);
         alert('Post added!');
         window.location = '/forum'

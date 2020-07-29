@@ -29,7 +29,6 @@ class Recipes extends Component {
     for (let value of formData) {
       data[value[0]] = value[1]
     }
-    console.log(data)
 
     fetch(`${config.API_ENDPOINT}/recipes`, {
       method: 'POST',
