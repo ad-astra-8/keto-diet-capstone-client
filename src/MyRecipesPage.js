@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
-// import Navbar from './Navbar'
+import React, { Component } from 'react';
 
 
 class MyRecipes extends Component {
     render() {
         return (
             <div>
-{/* <Navbar /> */}
             <section className="favorites">
 
                 <h1 className="">My favorite recipes:</h1>

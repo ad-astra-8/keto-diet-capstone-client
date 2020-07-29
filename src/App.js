@@ -7,8 +7,8 @@ import MyRecipesPage from "./MyRecipesPage";
 import About from "./About";
 import Recipes from "./Recipes";
 import Forum from "./Forum";
-import Login from './Login'
-import Register from './Register'
+import Login from './Login';
+import Register from './Register';
 
 class App extends Component {
   state = {
