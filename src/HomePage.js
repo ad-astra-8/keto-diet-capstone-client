@@ -29,20 +29,20 @@ class HomePage extends Component {
           </p>
 
           <div className="icon-container">
-            <div>
+            <div className="sub-container">
               <span className="icon-title">About</span>
               <Link to="about">
                 <img src="/images/about-image.jpg" alt="about-icon" />
               </Link>
             </div>
 
-            <div>
+            <div className="sub-container">
               <span className="icon-title">Recipes</span>
               <Link to="search-recipes">
                 <img src="/images/recipe-image.jpg" alt="recipe-icon" />
               </Link>
             </div>
-            <div>
+            <div className="sub-container">
               <span className="icon-title">Forum</span>
               <Link to="forum" tabs={this.props.tabs}>
                 <img src="/images/forum-image2.jpg" alt="forum-icon" />
