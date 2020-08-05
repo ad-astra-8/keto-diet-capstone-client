@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import HomePage from "./HomePage";
 import AccountPage from "./AccountPage";
-import MyRecipesPage from "./MyRecipesPage";
 import About from "./About";
 import Recipes from "./Recipes";
 import Forum from "./Forum";
@@ -74,7 +73,6 @@ class App extends Component {
                   />
                 )}
               />
-              <Route path="/my-recipes-page" component={MyRecipesPage} />
               <Route path="/account" component={AccountPage} />
             </Switch>
           </BrowserRouter>
