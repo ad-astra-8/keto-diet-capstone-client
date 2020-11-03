@@ -50,7 +50,7 @@ class Account extends Component {
             <div>
                 <Navbar />
                 <section className="my-account">
-                    <h1 className="">My F<i className="fa fa-heart" style={{fontSize: '22px'}} aria-hidden="true"></i>vs:</h1>
+                    <h1 className="">My Fav<i className="fa fa-heart" style={{fontSize: '22px'}} aria-hidden="true"></i>rite recipes:</h1>
                 </section>
                 <div className="favorite-list">
                     {existingFavorites}

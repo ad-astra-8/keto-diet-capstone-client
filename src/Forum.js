@@ -16,7 +16,6 @@ class Forum extends Component {
 
   componentDidMount() {
     let getCollectionByUserId = `https://keto-diet-api.herokuapp.com/api/notes`;
-    //  /${TokenService.getUserId()}`;
 
     fetch(getCollectionByUserId)
       .then((response) => response.json())
@@ -115,7 +114,7 @@ class Forum extends Component {
               />
             </fieldset>
             <div className="postResults">
-              <h2>Results matching your specific search:</h2>
+              <h2>Results matching your specific search below:</h2>
               {this.state.inputValue &&
                 filteredForum.map(({ name, content, }, index) => (
                   <div key={index} className="searchTerm-results">

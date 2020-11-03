@@ -58,9 +58,7 @@ class Recipes extends Component {
       })
 
       .catch((err) => {
-        // this.setState({
-        //   error: err.message,
-        // });
+         console.log(err.message);
       });
   }
 
@@ -85,17 +83,16 @@ class Recipes extends Component {
       });
 
     } else {
-      //assigning the object from the form data to params in the state
+      //assigns the object from the form data to params in the state
       this.setState({
         searchTerm: data,
         error: null
       });
     }
 
-    // const searchURL = `${config.API_ENDPOINT}/recipes-page`
     const searchURL = 'https://api.spoonacular.com/recipes/complexSearch';
     const queryString = this.formatQueryParams(data);
-    //sent all the params to the final url
+    //sends all the params to the final url
     const url =
       searchURL +
       "?" +
@@ -166,7 +163,7 @@ class Recipes extends Component {
       <div>
         <Navbar />
         <section className="recipes">
-          <h2 className="section-title">Keto Recipes</h2>
+          <h2 className="section-title">Recipes Index</h2>
           <p className='intro'> Search for a keto recipe based on a keyword and check your results below!</p>
           <form className="search-recipe-form" onSubmit={this.handleSubmit}>
             <label htmlFor="search-term">
@@ -177,10 +174,10 @@ class Recipes extends Component {
               type="input"
               name="query"
               className="search-term"
-              placeholder="chocolate"
+              placeholder="cake"
               required
             />
-            <button type="submit" id="submit-btn">
+            <button type="submit" id="submit-btn-index">
               Search
           </button>
           </form>

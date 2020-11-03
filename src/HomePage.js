@@ -21,12 +21,12 @@ class HomePage extends Component {
         <section className="homepage">
           <h2 className="section-title">Homepage</h2>
 
-          <p className="intro">
-            Everything Keto will help you gather all the information you need
-            about the Keto diet. You will be able to find facts, recipes, and
-            even share your personal experience about the diet. Select one of
-            the section that you would like to discover!
-          </p>
+            <p className="intro">
+              Everything Keto will help you gather all the information you need
+              about the Keto diet. Find facts, recipes, and
+              even share your personal experience about the diet. Select one of
+              the section that you would like to discover!
+            </p>
 
           <div className="icon-container">
             <div className="sub-container">
@@ -49,6 +49,11 @@ class HomePage extends Component {
               </Link>
             </div>
           </div>
+
+          <p className="intro">
+            Bon Appetit!
+          </p>
+
         </section>
       </div>
     );
