@@ -58,7 +58,7 @@ class Recipes extends Component {
       })
 
       .catch((err) => {
-         console.log(err.message);
+        console.log(err.message);
       });
   }
 
@@ -182,7 +182,7 @@ class Recipes extends Component {
           </button>
           </form>
           <ul className="results-list">{displayResults}</ul>
-          
+
         </section>
       </div>
     );
