@@ -528,9 +528,6 @@ Footer styles (Main Module)
   background-color: #a6d6c0;
 }
 
-.addPost {
-}
-
 .about {
   height: auto;
   background-color: #a6d6c0;
@@ -623,6 +620,14 @@ place all the mobile tables styles below this line
     margin:35px;
   }  
 
+  .search-recipe-form {
+    display: flex;
+  }
+
+  .search-term {
+    height: fit-content;
+  }
+
   .intro {
     width: 60%;
     margin-left: auto;
@@ -637,6 +642,15 @@ place all the mobile tables styles below this line
 
   input::placeholder {
     font-size: 16px;
+  }
+
+  #submit-btn-index {
+    margin-top: 5px;
+    margin-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    margin-bottom: 10px;
+    height: 30px;
   }
 }
 
@@ -786,8 +800,11 @@ place all the mobile tables styles below this line
 
 
   .tab {
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    border-top: none;
+    border-left: none;
   }
 
   #name {

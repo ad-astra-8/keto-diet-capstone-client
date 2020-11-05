@@ -98,11 +98,11 @@ class Forum extends Component {
         <Navbar />
         <section className="forum">
           <h2 className="section-title">Forum</h2>
-          <p className='intro'>Search for a post containing a specific keyword and check your results below!</p>
+          <p className='intro'>Filter posts containing a specific keyword and check your results below!</p>
           <form className="forum-form">
             <fieldset className="search-div">
               <label className="search-label" htmlFor="search-term">
-                Enter a keyword of your choice:
+                Type a keyword:
               </label>
               <input
                 className="search-input"
