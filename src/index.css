@@ -157,6 +157,11 @@ text-align: left;
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
+
+.addPost {
+  background-color: white;
+}
+
 .login-form {
   display: inline-flex;
   flex-direction: column;
@@ -236,6 +241,7 @@ a:hover {
   display: inline-block;
   text-align: left;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .post-div {
@@ -472,16 +478,24 @@ select {
 }
 
 .forum-form {
-  background-color: whitesmoke;
   padding-top: 60px;
 }
 
-.tabsContainer {
+.tabs_container {
   padding: 20px;
   padding-top: 40px;
   margin-top: 100px;
+  background-color: whitesmoke;
   /* margin-bottom: 100px; */
   /* border-top: solid black 0.5px; */
+}
+
+.tab {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: none;
+  border-left: none;
 }
 
 .content {
@@ -652,6 +666,15 @@ place all the mobile tables styles below this line
     margin-bottom: 10px;
     height: 30px;
   }
+
+  button.tab {
+    margin-right: 80px;
+  }
+
+  .button-tab-container {
+    display: inline-flex;
+    margin-top: 20px;
+  }
 }
 
 /*iPad potrait*/
@@ -796,15 +819,6 @@ place all the mobile tables styles below this line
   .search-input {
     /* min-width: -webkit-fill-available; */
     background-color: white;
-  }
-
-
-  .tab {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: none;
-    border-left: none;
   }
 
   #name {

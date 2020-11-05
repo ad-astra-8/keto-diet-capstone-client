@@ -84,16 +84,6 @@ class AddPost extends Component {
         <section className="addPost">
           <p className='intro'>Select a topic to discuss and share your experience!</p>
           <form className="add-note" onSubmit={this.handleSubmit}>
-            <fieldset className="post-title">
-              <label htmlFor="title">Give a title for your post</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                defaultValue=""
-                onChange={(e) => this.updateName(e.target.value)}
-              />
-            </fieldset>
 
             <fieldset className="post-div">
               <label htmlFor="post-comment">
@@ -112,6 +102,19 @@ class AddPost extends Component {
                   ))}
                 </select>
               </label>
+
+              <fieldset className="post-title">
+                <label htmlFor="title">Give a title for your post</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  defaultValue=""
+                  onChange={(e) => this.updateName(e.target.value)}
+                />
+              </fieldset>
+
+
               <textarea
                 id="postComment"
                 placeholder="leave your comment here"

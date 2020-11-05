@@ -43,14 +43,16 @@ class Forum extends Component {
         let id = parseInt(key);
 
         return (
-          <button
-            className="tab"
-            key={id}
-            type="button"
-            onClick={() => this.handleTabClick(id)}
-          >
-            {value}
-          </button>
+          <div className='button-tab-container'>
+            <button
+              className="tab"
+              key={id}
+              type="button"
+              onClick={() => this.handleTabClick(id)}
+            >
+              {value}
+            </button>
+          </div>
         );
       }
     );
@@ -110,11 +112,12 @@ class Forum extends Component {
                 value={this.state.inputValue}
                 onChange={this.forumFilterOnChange}
                 id="search-term"
-                placeholder="enter keyword"
+                placeholder="example: 'fasting'"
               />
             </fieldset>
             <div className="postResults">
               <h2>Results matching your specific search below:</h2>
+              <p>* * *</p>
               {this.state.inputValue &&
                 filteredForum.map(({ name, content, }, index) => (
                   <div key={index} className="searchTerm-results">
@@ -125,8 +128,8 @@ class Forum extends Component {
                 ))}
             </div>
 
-            <div className="tabsContainer">
-              <p className='intro'>Click on a tab and search posts per topics!</p>
+            <div className="tabs_container">
+              <p className='intro'>Click on a tab and search posts per topic!</p>
 
               {this.renderButtons()}
               {!!this.state.folderList.length && this.renderContent()}
