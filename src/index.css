@@ -61,7 +61,13 @@ h1 {
 
 button {
   margin: 20px;
-  padding: 7px 10px 7px 10px;
+ /* padding: 7px 10px 7px 10px; */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 30px;
   background-color: transparent;
   text-decoration: none;
   border: solid 2px #F44336;
@@ -97,8 +103,9 @@ textarea {
   border: solid rgb(32, 31, 31) 0.5px;
   border-radius: 3px;
   height : 150px;
-  width: -webkit-fill-available;
+  width: 50%;
   padding: 5px;
+  margin-left: 10px;
 }
 
 .login-button {
@@ -245,7 +252,7 @@ a:hover {
 }
 
 .post-div {
-  display: flex;
+  display: inline-grid;
   text-align: left;
   width: 100%;
   margin: 20px 0;
@@ -304,7 +311,7 @@ a:hover {
 }
 
 #submit-btn {
-padding: 12px;
+  margin-left: 10px;
 }
 
 #submit-btn-index {
@@ -843,7 +850,7 @@ place all the mobile tables styles below this line
     text-align: left;
   }
 
-  #submit-btn {
+  /* #submit-btn {
     margin: 0;
-  }
+  } */
 }

@@ -110,10 +110,10 @@ class AddPost extends Component {
                   name="name"
                   id="name"
                   defaultValue=""
+                  placeholder="Your title"
                   onChange={(e) => this.updateName(e.target.value)}
                 />
               </fieldset>
-
 
               <textarea
                 id="postComment"
