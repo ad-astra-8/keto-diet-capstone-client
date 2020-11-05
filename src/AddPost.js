@@ -110,7 +110,7 @@ class AddPost extends Component {
                   name="name"
                   id="name"
                   defaultValue=""
-                  placeholder="Your title"
+                  placeholder="your title"
                   onChange={(e) => this.updateName(e.target.value)}
                 />
               </fieldset>

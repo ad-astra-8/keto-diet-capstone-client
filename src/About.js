@@ -42,7 +42,7 @@ function About() {
         </div>
 
         <div className='intro sources-container'>
-          <p>You can find links to other sources below:</p>
+          <p className='p_sources'>You can find links to other sources below:</p>
           <ul className='sources-ul'>
             <li className='sources-li'><a href="https://alldayidreamaboutfood.com/" target='_blank' rel="noopener noreferrer">All Day I Dream About Food</a></li>
             <li className='sources-li'><a href="https://jenniferbanz.com/" target='_blank' rel="noopener noreferrer">Low Carb with Jennifer</a></li>

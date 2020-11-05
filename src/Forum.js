@@ -112,7 +112,7 @@ class Forum extends Component {
                 value={this.state.inputValue}
                 onChange={this.forumFilterOnChange}
                 id="search-term"
-                placeholder="example: 'fasting'"
+                placeholder="ex: 'fasting'"
               />
             </fieldset>
             <div className="postResults">
