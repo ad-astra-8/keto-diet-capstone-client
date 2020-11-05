@@ -202,7 +202,8 @@ Content styles (Main Module)
   margin-top: 20px;
   margin-bottom: 60px;
   padding: 5px;
-  padding-top: 12px;
+  padding-top: 18px;
+  padding-bottom: 10px;
   overflow: hidden;
   float: right;
   width: 100%;
@@ -580,7 +581,7 @@ Responsive styles
   } 
 
   .nav-container {
-    padding: 10px;
+    padding-top: 10px;
     justify-content: center;
   }
 
@@ -732,7 +733,6 @@ Responsive styles
   }
 
   .nav-container {
-    padding: 10px;
     padding-top: 18px;
     justify-content: center;
   }
