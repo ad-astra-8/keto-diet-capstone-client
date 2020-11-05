@@ -733,6 +733,7 @@ Responsive styles
 
   .nav-container {
     padding: 10px;
+    padding-top: 18px;
     justify-content: center;
   }
 
@@ -754,6 +755,10 @@ Responsive styles
 @media only screen and (min-width: 320px) {
   .nav-link {
     padding: 3px;
+  }
+
+  .nav-container {
+    padding-top: 18px;
   }
 
   .icon-container {
