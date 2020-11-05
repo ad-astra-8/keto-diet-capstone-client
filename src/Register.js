@@ -70,7 +70,7 @@ class Register extends Component {
       
     return (
       <section className="register-component">
-        <div className="login-div">
+        <div className="register-div">
           <h1 className="title">Everything Keto</h1>
           <h2 className="subtitle">Create your account!</h2>
           <div className="form-div">
